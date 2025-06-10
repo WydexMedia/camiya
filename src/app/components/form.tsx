@@ -36,14 +36,14 @@ const BuyNowPopup: React.FC<Props> = ({ product, onClose }) => {
 
         const message = `${imageURL}
 
-Hi, I'm interested in buying the product:
-Price: ₹${product.price.toLocaleString("en-IN")}
-Category: ${product.category}
+        Hi, I'm interested in buying the product:
+        Price: ₹${product.price.toLocaleString("en-IN")}
+        Category: ${product.category}
 
-My Details:
-Name: ${formData.name}
-Phone: ${formData.phone}
-Place: ${formData.place}`;
+        My Details:
+        Name: ${formData.name}
+        Phone: ${formData.phone}
+        Place: ${formData.place}`;
 
         const encodedMessage = encodeURIComponent(message);
         const whatsappNumber = "919074916065";
@@ -102,7 +102,7 @@ Place: ${formData.place}`;
                             required
                         />
                         {errors.name && <p className="text-red-600 text-sm mt-1">{errors.name}</p>}
-                        
+
                         <input
                             type="tel"
                             name="phone"
@@ -128,7 +128,7 @@ Place: ${formData.place}`;
                             required
                         />
                         {errors.place && <p className="text-red-600 text-sm mt-1">{errors.place}</p>}
-                        
+
                         <div className="flex justify-end gap-4">
                             <button type="button" onClick={onClose} className="text-gray-600 hover:text-red-600">
                                 Cancel
