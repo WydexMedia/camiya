@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../../components/Header";
 import { useWishlist } from "../../components/WishlistContext";
 import ProductCard from "../../components/ProductCard";
+import Footer from "@/app/components/Footer";
 
 export default function Wishlist() {
   const { wishlist } = useWishlist();
@@ -26,6 +27,7 @@ export default function Wishlist() {
           </div>
         )}
       </div>
+       <Footer />
     </div>
   );
 }

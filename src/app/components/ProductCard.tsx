@@ -2,6 +2,7 @@ import React from "react";
 import { useWishlist } from "./WishlistContext";
 import { useWishlistNotification } from "./WishlistNotificationContext";
 
+
 type Product = {
   category: string;
   image: string;
@@ -63,6 +64,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
       >
         Buy Now
       </button>
+      
     </div>
   );
 };

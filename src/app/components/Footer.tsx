@@ -117,8 +117,8 @@ const Footer = () => {
           <div>
             <p className="font-semibold mb-2">Follow us on</p>
             <div className="flex space-x-4 text-xl text-white">
-              <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
-              <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-linkedin-in hover:text-gray-300"></i></a>
+              <a href="https://www.facebook.com/camiyadiamonds/"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
+              {/* <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-linkedin-in hover:text-gray-300"></i></a>÷ */}
               <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-instagram hover:text-gray-300"></i></a>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Footer = () => {
           <i className="fab fa-cc-paypal"></i>
           <i className="fab fa-cc-apple-pay"></i>
         </div>
-        <p>Designed & developed by Wydex</p>
+        <p>Designed & developed by <a href="https://wydexmedia.com">Wydex</a></p>
       </div>
     </footer>
   );
