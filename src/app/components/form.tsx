@@ -32,7 +32,7 @@ const BuyNowPopup: React.FC<Props> = ({ product, onClose }) => {
     };
 
     const SendToWhatsApp = () => {
-        const imageURL = 'https://iplanet.one/cdn/shop/files/iPhone_15_Pink_PDP_Image_Position-1__en-IN.jpg?v=1695427946&width=1445';
+        const imageURL = `https://camiya-diamonds.vercel.app/${product.image}`;
 
         const message = `${imageURL}
 
