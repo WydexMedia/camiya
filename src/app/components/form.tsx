@@ -32,7 +32,7 @@ const BuyNowPopup: React.FC<Props> = ({ product, onClose }) => {
     };
 
     const SendToWhatsApp = () => {
-        const imageURL = `https://camiya-diamonds.vercel.app/${product.image}`;
+        const imageURL = `https://camiya.vercel.app/${product.image}`;
 
         const message = `${imageURL}
 
