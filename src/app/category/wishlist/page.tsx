@@ -1,12 +1,17 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import type { Product } from "../../components/WishlistContext";
 import Header from "../../components/Header";
 import { useWishlist } from "../../components/WishlistContext";
 import ProductCard from "../../components/ProductCard";
 import Footer from "@/app/components/Footer";
+import BuyNowPopup from "../../components/form";
+import FeaturesSection from "@/app/components/FeaturesSection";
 
-export default function Wishlist() {
+const WishlistPage: React.FC = () => {
   const { wishlist } = useWishlist();
+  const [showForm, setShowForm] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -21,13 +26,27 @@ export default function Wishlist() {
               <ProductCard
                 key={idx}
                 product={product}
-                onBuyNow={() => {}}
+                onBuyNow={(product) => {
+                  setSelectedProduct(product);
+                  setShowForm(true);
+                }}
               />
             ))}
           </div>
         )}
+        {/* Buy Now Modal */}
+        {showForm && selectedProduct && (
+          <BuyNowPopup
+            product={selectedProduct}
+            onClose={() => setShowForm(false)}
+          />
+        )}
       </div>
-       <Footer />
+        <FeaturesSection />
+        {/* Footer */}
+      <Footer />
     </div>
   );
-}
+};
+
+export default WishlistPage;

@@ -101,7 +101,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
       </a>
       <button
         onClick={() => onBuyNow(product)}
-        className="mt-1 px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition"
+        className="mt-1 px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Buy Now
       </button>

@@ -38,12 +38,12 @@ const Header = () => {
               <span className="ml-1 bg-teal-900 text-white rounded-full px-2 py-0.5 text-xs font-bold border border-white">{wishlist.length}</span>
             )}
           </Link>
-          <button className="hover:underline">Contact Us</button>
+          {/* <button className="hover:underline">Contact Us</button> */}
         </div>
       </header>
       {/* Mobile search bar below header */}
-      <div className="block md:hidden bg-white px-2 py-2">
-        <SearchBar />
+      <div className="block md:hidden bg-white roundness-md px-2 py-2 flex justify-center shadow-md">
+        <SearchBar/>
       </div>
     </>
   );

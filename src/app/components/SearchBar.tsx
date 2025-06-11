@@ -36,7 +36,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search for diamond jewellery"
-        className="w-full pl-10 pr-4 py-2 rounded-full bg-white placeholder-gray-500 text-black focus:outline-none text-xs"
+        className="w-full pl-10 md:pl-10 pr-4 md:pr-4 py-2 md:py-2 rounded-full bg-[#dfe7e7] md:bg-white placeholder-gray-500 text-black focus:outline-none text-xs md:text-sm"
         value={query}
         onChange={handleChange}
         onFocus={() => query && setShowDropdown(true)}
