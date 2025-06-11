@@ -7,6 +7,7 @@ import { useWishlist } from "./WishlistContext";
 
 
 
+
 const Header = () => {
   const { wishlist } = useWishlist();
   return (
@@ -14,9 +15,11 @@ const Header = () => {
       <header className="bg-teal-900 text-white py-3 px-6 flex justify-between items-center">
         <div className="text-2xl font-bold">
           <a href="/">
-            <img className="w-24 h-12" src="/images/camiya-logo.png" alt="Logo" />
+            <img className="w-24 h-12" src="/images/camiyatrans.png" alt="Logo" style={{width :"150%"}}/>
+           
           </a>
         </div>
+         <p className="hidden md:block">CAMIYA DIAMONDS</p>
         <div className="hidden md:flex items-center space-x-4 flex-1 justify-center">
           <SearchBar />
         </div>
