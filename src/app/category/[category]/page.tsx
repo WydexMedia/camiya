@@ -1,11 +1,13 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import productsData from "../../data/products.json";
 import Link from "next/link";
 import { useParams, useSearchParams } from "next/navigation";
 import ProductCard from "../../components/ProductCard";
 import BuyNowPopup from "../../components/form";
+
+import Loader from "../../components/Loader";
 
 const categories = [
   "Rings",
@@ -27,6 +29,7 @@ type Product = {
 
 const formatPrice = (price: number) => "₹ " + price.toLocaleString("en-IN");
 
+
 export default function CategoryPage() {
   const params = useParams();
   const searchParams = useSearchParams();
@@ -36,8 +39,22 @@ export default function CategoryPage() {
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [productsData, setProductsData] = useState<Product[]>([]);
+ 
 
-  let filteredProducts = (productsData as Product[]).filter(
+  useEffect(() => {
+    setLoading(true);
+    // Simulate async fetch
+    const timer = setTimeout(() => {
+      setProducts(productsData as Product[]);
+      setLoading(false);
+    }, 1000); // 1s delay
+    return () => clearTimeout(timer);
+  }, [selectedCategory]);
+
+  let filteredProducts = products.filter(
     (p) => filter.length === 0 || filter.includes(p.category)
   );
 
@@ -55,6 +72,7 @@ export default function CategoryPage() {
 
   return (
     <div className="bg-gray-100 min-h-screen">
+      {loading && <Loader />}
       <Header />
       {/* Top Category Navbar */}
       <nav className="bg-white shadow text-sm font-semibold text-gray-700">

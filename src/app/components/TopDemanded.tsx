@@ -3,7 +3,6 @@ import React from "react";
 import productsData from "../data/products.json";
 import Link from "next/link";
 import BuyNowPopup from "./form";
-import ProductCard from "./ProductCard";
 
 
 type Product = {
@@ -35,14 +34,24 @@ const TopDemanded = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
         {topDemanded.map((product: Product, idx: number) => (
-          <ProductCard
-            key={idx}
-            product={product}
-            onBuyNow={(product) => {
-              setSelectedProduct(product);
-              setShowForm(true);
-            }}
-          />
+          <div className="text-center" key={idx}>
+            <div className="bg-gray-100 p-6 relative rounded">
+              <img src={product.image} alt={product.category} className="w-full h-48 object-contain mx-auto" />
+              <span className="absolute top-2 right-2 text-gray-400 text-xl">♡</span>
+            </div>
+            <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
+            <a href="#" className="text-sm text-teal-700 font-medium">Check delivery date</a>
+            <br />
+            <button 
+               onClick={() => {
+                setSelectedProduct(product);
+                setShowForm(true);
+              }}
+              className="mt-1 px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition"
+            >
+              Buy Now
+            </button>
+          </div>
         ))}
       </div>
       <div className="flex justify-center">
@@ -53,13 +62,6 @@ const TopDemanded = () => {
           See All
         </Link>
       </div>
-      {/* Render the modal only when needed */}
-      {showForm && selectedProduct && (
-        <BuyNowPopup
-          product={selectedProduct}
-          onClose={() => setShowForm(false)}
-        />
-      )}
     </section>
   );
 };

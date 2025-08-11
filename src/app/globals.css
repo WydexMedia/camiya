@@ -25,3 +25,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+ .animate-like-bounce {
+   animation: like-bounce 0.7s cubic-bezier(.36,1.56,.64,1) both;
+ }
+ @keyframes like-bounce {
+   0% { transform: scale(1); }
+   10% { transform: scale(1.2); }
+   30% { transform: scale(0.95); }
+   50% { transform: scale(1.15); }
+   70% { transform: scale(0.98); }
+   100% { transform: scale(1.1); }
+ }

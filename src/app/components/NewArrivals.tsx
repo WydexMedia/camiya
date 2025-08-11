@@ -1,14 +1,18 @@
 'use client'
 import React, { useState } from "react";
-import BuyNowPopup from "./form";
+import BuyNowPopup from "./form"; // ✅ This is a component
 import productsData from "../data/products.json";
 import Link from "next/link";
-import ProductCard from "./ProductCard";
 
 type Product = {
+  id: string;
   category: string;
+  name: string;
   image: string;
   price: number;
+  weight: string;
+  purity: string;
+  stones: string;
 };
 
 const products: Product[] = productsData as Product[];
@@ -31,14 +35,30 @@ const NewArrivals = () => {
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
         {showProducts.map((product: Product, idx: number) => (
-          <ProductCard
-            key={idx}
-            product={product}
-            onBuyNow={(product) => {
-              setSelectedProduct(product);
-              setShowForm(true);
-            }}
-          />
+          <div className="text-center group" key={idx}>
+            <div className="bg-gray-100 p-4 sm:p-6 relative rounded cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <Link href={`/product/${idx}`}>
+                <img src={product.image} alt={product.category} className="w-full h-40 sm:h-48 object-contain mx-auto" />
+              </Link>
+              <span className="absolute top-2 right-2 text-gray-400 text-xl">♡</span>
+            </div>
+            <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
+            <Link href={`/product/${idx}`} className="block">
+              <p className="text-sm text-gray-700 font-medium hover:text-teal-600 transition-colors cursor-pointer">
+                {product.name}
+              </p>
+            </Link>
+            <a href="#" className="text-sm text-teal-700 font-medium block mb-2">Check delivery date</a>
+            <button 
+              onClick={() => {
+                setSelectedProduct(product);
+                setShowForm(true);
+              }}
+              className="mt-1 px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition"
+            >
+              Buy Now
+            </button>
+          </div>
         ))}
       </div>
 
