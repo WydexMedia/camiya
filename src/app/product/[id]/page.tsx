@@ -4,6 +4,8 @@ import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import productsData from '../../data/products.json';
 import BuyNowPopup from '../../components/form';
+import { useWishlist } from '../../components/WishlistContext';
+import { useWishlistNotification } from '../../components/WishlistNotificationContext';
 
 type Product = {
   id: string;
@@ -24,6 +26,8 @@ const ProductView = () => {
   const router = useRouter();
   const [showForm, setShowForm] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { notify } = useWishlistNotification();
   
   // Get product ID from URL params
   const productId = parseInt(params.id as string);
@@ -194,8 +198,20 @@ const ProductView = () => {
                 Add to Cart
               </button>
               
-              <button className="w-full border-2 border-gray-300 text-gray-700 py-4 px-6 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors">
-                Add to Wishlist
+              <button
+                onClick={() => {
+                  const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
+                  if (!isWishlisted) {
+                    addToWishlist(product);
+                    notify("Added to wishlist");
+                  } else {
+                    removeFromWishlist(product);
+                    notify("Removed from wishlist");
+                  }
+                }}
+                className={`w-full border-2 py-4 px-6 rounded-lg font-semibold text-lg transition-colors ${wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'border-red-600 text-red-600 hover:bg-red-50' : 'border-gray-300 text-gray-700 hover:bg-gray-50'}`}
+              >
+                {wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'Remove from Wishlist' : 'Add to Wishlist'}
               </button>
             </div>
 

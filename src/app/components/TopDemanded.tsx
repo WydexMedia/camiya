@@ -3,12 +3,19 @@ import React from "react";
 import productsData from "../data/products.json";
 import Link from "next/link";
 import BuyNowPopup from "./form";
+import { useWishlist } from "./WishlistContext";
+import { useWishlistNotification } from "./WishlistNotificationContext";
 
 
 type Product = {
+  id: string;
   category: string;
+  name: string;
   image: string;
   price: number;
+  weight: string;
+  purity: string;
+  stones: string;
 };
 
 const products: Product[] = productsData as Product[];
@@ -24,6 +31,8 @@ const topDemanded = [...products]
 const TopDemanded = () => {
   const [showForm, setShowForm] = React.useState(false); // ✅ control modal
   const [selectedProduct, setSelectedProduct] = React.useState<Product | null>(null);
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { notify } = useWishlistNotification();
 
   return (
     <section className="px-6 py-12">
@@ -34,12 +43,36 @@ const TopDemanded = () => {
 
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
         {topDemanded.map((product: Product, idx: number) => (
-          <div className="text-center" key={idx}>
-            <div className="bg-gray-100 p-6 relative rounded">
-              <img src={product.image} alt={product.category} className="w-full h-48 object-contain mx-auto" />
-              <span className="absolute top-2 right-2 text-gray-400 text-xl">♡</span>
+          <div className="text-center group" key={idx}>
+            <div className="bg-gray-100 p-6 relative rounded cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+              <Link href={`/product/${products.findIndex((p: Product) => p.id === product.id)}`}>
+                <img src={product.image} alt={product.name} className="w-full h-48 object-contain mx-auto" />
+              </Link>
+              <button
+                aria-label="Toggle wishlist"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
+                  if (!isWishlisted) {
+                    addToWishlist(product);
+                    notify("Added to wishlist");
+                  } else {
+                    removeFromWishlist(product);
+                    notify("Removed from wishlist");
+                  }
+                }}
+                className={`absolute top-2 right-2 text-xl ${wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'text-red-700' : 'text-gray-400'}`}
+              >
+                {wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? '❤' : '♡'}
+              </button>
             </div>
             <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
+            <Link href={`/product/${products.findIndex((p: Product) => p.id === product.id)}`} className="block">
+              <p className="text-sm text-gray-700 font-medium hover:text-teal-600 transition-colors cursor-pointer">
+                {product.name}
+              </p>
+            </Link>
             <a href="#" className="text-sm text-teal-700 font-medium">Check delivery date</a>
             <br />
             <button 

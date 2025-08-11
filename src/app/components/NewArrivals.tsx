@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import BuyNowPopup from "./form"; // ✅ This is a component
 import productsData from "../data/products.json";
 import Link from "next/link";
+import { useWishlist } from "./WishlistContext";
+import { useWishlistNotification } from "./WishlistNotificationContext";
 
 type Product = {
   id: string;
@@ -23,6 +25,8 @@ const formatPrice = (price: number) =>
 const NewArrivals = () => {
   const [showForm, setShowForm] = useState(false); // ✅ control modal
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { notify } = useWishlistNotification();
 
   const maxToShow = 8;
   const showProducts = products.slice(0, maxToShow);
@@ -40,7 +44,24 @@ const NewArrivals = () => {
               <Link href={`/product/${idx}`}>
                 <img src={product.image} alt={product.category} className="w-full h-40 sm:h-48 object-contain mx-auto" />
               </Link>
-              <span className="absolute top-2 right-2 text-gray-400 text-xl">♡</span>
+              <button
+                aria-label="Toggle wishlist"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
+                  if (!isWishlisted) {
+                    addToWishlist(product);
+                    notify("Added to wishlist");
+                  } else {
+                    removeFromWishlist(product);
+                    notify("Removed from wishlist");
+                  }
+                }}
+                className={`absolute top-2 right-2 text-xl ${wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'text-red-700' : 'text-gray-400'}`}
+              >
+                {wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? '❤' : '♡'}
+              </button>
             </div>
             <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
             <Link href={`/product/${idx}`} className="block">

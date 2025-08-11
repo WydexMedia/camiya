@@ -35,13 +35,12 @@ export default function CategoryPage() {
   const searchParams = useSearchParams();
   const selectedCategory = decodeURIComponent(params.category as string || "");
   const [sort, setSort] = useState<string>("");
-  const [filter, setFilter] = useState<string[]>([selectedCategory]);
+  const [filter, setFilter] = useState<string[]>(selectedCategory === "All" ? [] : [selectedCategory]);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState<Product[]>([]);
-  const [productsData, setProductsData] = useState<Product[]>([]);
  
 
   useEffect(() => {
@@ -54,9 +53,17 @@ export default function CategoryPage() {
     return () => clearTimeout(timer);
   }, [selectedCategory]);
 
+  // Apply category filter (empty means All)
   let filteredProducts = products.filter(
     (p) => filter.length === 0 || filter.includes(p.category)
   );
+
+  // Apply price filter from query string if present
+  const maxPriceParam = searchParams.get("maxPrice");
+  const maxPrice = maxPriceParam ? Number(maxPriceParam) : undefined;
+  if (!Number.isNaN(maxPrice) && maxPrice !== undefined) {
+    filteredProducts = filteredProducts.filter((p) => p.price <= (maxPrice as number));
+  }
 
   if (sort === "low") {
     filteredProducts = [...filteredProducts].sort((a, b) => a.price - b.price);

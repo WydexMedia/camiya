@@ -81,18 +81,24 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
           alt={product.category}
           className="w-full h-40 sm:h-48 object-contain mx-auto"
         />
-        <span
+        <button
+          type="button"
+          aria-label="Toggle wishlist"
           ref={heartRef}
           className={[
-            'absolute top-2 right-2 text-xl cursor-pointer select-none',
+            'absolute top-2 right-2 text-xl cursor-pointer select-none z-10',
             isWishlisted ? 'text-red-700' : 'text-gray-400',
             animate ? 'animate-like-bounce' : ''
           ].join(' ')}
-          onClick={handleWishlist}
-          style={{ transition: 'color 0.3s, transform 0.3s', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            handleWishlist();
+          }}
+          style={{ transition: 'color 0.3s, transform 0.3s', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', background: 'transparent' }}
         >
           {isWishlisted ? WishlistIconClicked : WishlistIconUnclicked}
-        </span>
+        </button>
 
       </div>
       <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>

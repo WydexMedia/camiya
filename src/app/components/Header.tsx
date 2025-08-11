@@ -29,7 +29,7 @@ const Header = () => {
               <span className="ml-1 bg-white text-teal-900 rounded-full px-2 py-0.5 text-xs font-bold">{wishlist.length}</span>
             )}
           </Link>
-          <button className="hover:underline">Contact Us</button>
+          <Link href="/contact" className="hover:underline">Contact Us</Link>
         </div>
         <div className="flex md:hidden items-center space-x-4">
           <Link href="/category/wishlist" className="hover:underline flex items-center relative">
