@@ -56,7 +56,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
 
 
   const [animate, setAnimate] = React.useState(false);
-  const heartRef = React.useRef<HTMLSpanElement>(null);
+  const heartRef = React.useRef<HTMLButtonElement>(null);
 
   const handleWishlist = () => {
     if (!isWishlisted) {
