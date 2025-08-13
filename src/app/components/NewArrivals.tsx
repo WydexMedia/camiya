@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import BuyNowPopup from "./form"; // ✅ This is a component
 import productsData from "../data/products.json";
 import Link from "next/link";
+import Image from "next/image";
 import { useWishlist } from "./WishlistContext";
 import { useWishlistNotification } from "./WishlistNotificationContext";
 
@@ -42,7 +43,7 @@ const NewArrivals = () => {
           <div className="text-center group" key={idx}>
             <div className="bg-gray-100 p-4 sm:p-6 relative rounded cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-105">
               <Link href={`/product/${idx}`}>
-                <img src={product.image} alt={product.category} className="w-full h-40 sm:h-48 object-contain mx-auto" />
+                <Image src={product.image} alt={product.category} width={400} height={300} className="w-full h-40 sm:h-48 object-contain mx-auto" loading="eager" priority />
               </Link>
               <button
                 aria-label="Toggle wishlist"

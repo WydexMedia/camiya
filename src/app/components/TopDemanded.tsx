@@ -2,6 +2,7 @@
 import React from "react";
 import productsData from "../data/products.json";
 import Link from "next/link";
+import Image from "next/image";
 import BuyNowPopup from "./form";
 import { useWishlist } from "./WishlistContext";
 import { useWishlistNotification } from "./WishlistNotificationContext";
@@ -46,7 +47,7 @@ const TopDemanded = () => {
           <div className="text-center group" key={idx}>
             <div className="bg-gray-100 p-6 relative rounded cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-105">
               <Link href={`/product/${products.findIndex((p: Product) => p.id === product.id)}`}>
-                <img src={product.image} alt={product.name} className="w-full h-48 object-contain mx-auto" />
+                                 <Image src={product.image} alt={product.name} width={500} height={375} className="w-full h-48 object-contain mx-auto" loading="eager" priority />
               </Link>
               <button
                 aria-label="Toggle wishlist"

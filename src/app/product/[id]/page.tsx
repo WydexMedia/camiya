@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import productsData from '../../data/products.json';
+import Image from 'next/image';
 import BuyNowPopup from '../../components/form';
 import { useWishlist } from '../../components/WishlistContext';
 import { useWishlistNotification } from '../../components/WishlistNotificationContext';
@@ -91,10 +92,13 @@ const ProductView = () => {
           <div className="space-y-4">
             {/* Main Image */}
             <div className="aspect-square bg-white rounded-lg overflow-hidden shadow-lg">
-              <img 
+              <Image 
                 src={productImages[selectedImage]} 
                 alt={product.category}
+                width={800}
+                height={800}
                 className="w-full h-full object-contain"
+                priority
               />
             </div>
             
@@ -108,10 +112,13 @@ const ProductView = () => {
                     selectedImage === index ? 'border-teal-500' : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
-                  <img 
+                  <Image 
                     src={image} 
                     alt={`${product.category} ${index + 1}`}
+                    width={200}
+                    height={200}
                     className="w-full h-full object-contain"
+                    loading="eager"
                   />
                 </button>
               ))}
@@ -350,10 +357,13 @@ const ProductView = () => {
                   className="group"
                 >
                   <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                    <img 
+                    <Image 
                       src={relatedProduct.image} 
                       alt={relatedProduct.name}
+                      width={300}
+                      height={240}
                       className="w-full h-32 object-contain mb-3 group-hover:scale-105 transition-transform"
+                      loading="lazy"
                     />
                     <h3 className="font-medium text-gray-900 text-sm mb-1 group-hover:text-teal-600 transition-colors">
                       {relatedProduct.name}

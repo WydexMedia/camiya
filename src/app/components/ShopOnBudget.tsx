@@ -1,8 +1,8 @@
 import React from "react";
-
-
-import Link from "next/link";
-import productsData from "../data/products.json";
+import Image from "next/image";
+ 
+ import Link from "next/link";
+ import productsData from "../data/products.json";
 
 const budgetRanges = [
   { label: "Under 50000", max: 50000, image: "/images/2.jpg" },
@@ -29,7 +29,7 @@ const ShopOnBudget = () => (
             }}
             className="relative rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300 block"
           >
-            <img src={range.image} alt={range.label} className="w-full h-full object-cover" />
+                         <Image src={range.image} alt={range.label} width={800} height={600} className="w-full h-full object-cover" priority loading="eager" />
             <div className="absolute bottom-4 left-4 text-white">
               <h3 className="text-lg font-semibold">{range.label}</h3>
               <p className="text-cyan-300 text-sm">{count} styles</p>
