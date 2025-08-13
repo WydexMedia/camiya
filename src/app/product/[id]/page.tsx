@@ -28,6 +28,10 @@ const ProductView = () => {
   const [selectedImage, setSelectedImage] = useState(0);
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
   const { notify } = useWishlistNotification();
+  const [showVideoModal, setShowVideoModal] = useState(false);
+  const [videoForm, setVideoForm] = useState({ name: "", email: "", mobile: "", language: "English" });
+  const [showTrialModal, setShowTrialModal] = useState(false);
+  const [trialForm, setTrialForm] = useState({ name: "", mobile: "", location: "" });
   
   // Get product ID from URL params
   const productId = parseInt(params.id as string);
@@ -130,6 +134,83 @@ const ProductView = () => {
               </div>
               <p className="text-sm text-green-600 mt-1">Free delivery</p>
             </div>
+
+              {/* request at home */}
+            {/* Quick Actions */}
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <button
+                onClick={() => setShowVideoModal(true)}
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                aria-label="Request video call"
+              >
+                <div className="relative">
+                  <svg 
+                    className="h-6 w-6 group-hover:animate-pulse" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      d="M15 10L21 6V18L15 14V10Z" 
+                      fill="currentColor" 
+                      className="drop-shadow-sm"
+                    />
+                    <path 
+                      d="M3 6C3 4.89543 3.89543 4 5 4H13C14.1046 4 15 4.89543 15 6V18C15 19.1046 14.1046 20 13 20H5C3.89543 20 3 19.1046 3 18V6Z" 
+                      fill="currentColor" 
+                      className="drop-shadow-sm"
+                    />
+                    <circle 
+                      cx="9" 
+                      cy="12" 
+                      r="2" 
+                      fill="white" 
+                      className="drop-shadow-sm"
+                    />
+                    <path 
+                      d="M17 8L21 6V18L17 16V8Z" 
+                      fill="currentColor" 
+                      fillOpacity="0.7" 
+                      className="drop-shadow-sm"
+                    />
+                  </svg>
+                </div>
+                <span className="font-semibold">Request Video Call</span>
+              </button>
+              <button
+                onClick={() => setShowTrialModal(true)}
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                aria-label="Request trial at home"
+              >
+                <div className="relative">
+                  <svg 
+                    className="h-6 w-6 group-hover:animate-pulse" 
+                    viewBox="0 0 24 24" 
+                    fill="none" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path 
+                      d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="drop-shadow-sm"
+                    />
+                    <path 
+                      d="M9 7V5C9 4.44772 9.44772 4 10 4H14C14.5523 4 15 4.44772 15 5V7" 
+                      stroke="currentColor" 
+                      strokeWidth="2" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                      className="drop-shadow-sm"
+                    />
+                  </svg>
+                </div>
+                <span className="font-semibold">Trial At Home</span>
+              </button>
+            </div>
+
 
             {/* Product Specifications */}
             <div className="space-y-4">
@@ -291,6 +372,188 @@ const ProductView = () => {
           product={product}
           onClose={() => setShowForm(false)}
         />
+      )}
+
+      {/* Video Call Modal */}
+      {showVideoModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-md p-6 relative">
+            <button
+              aria-label="Close"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              onClick={() => setShowVideoModal(false)}
+            >
+              ×
+            </button>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Request a Video Call</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Name</label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+                  value={videoForm.name}
+                  onChange={(e) => setVideoForm({ ...videoForm, name: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Email</label>
+                <input
+                  type="email"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+                  value={videoForm.email}
+                  onChange={(e) => setVideoForm({ ...videoForm, email: e.target.value })}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Mobile Number</label>
+                <input
+                  type="tel"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-teal-600"
+                  placeholder="10-digit number"
+                  value={videoForm.mobile}
+                  onChange={(e) => setVideoForm({ ...videoForm, mobile: e.target.value.replace(/[^0-9]/g, '') })}
+                  maxLength={10}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Preferred Language</label>
+                <select
+                  className="w-full border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-600"
+                  value={videoForm.language}
+                  onChange={(e) => setVideoForm({ ...videoForm, language: e.target.value })}
+                >
+                  <option>Malayalam</option>
+                  <option>English</option>
+                  <option>Hindi</option>
+                  <option>Tamil</option>
+                  <option>Kannada</option>
+                  <option>Telugu</option>
+                </select>
+              </div>
+              <button
+                onClick={() => {
+                  const { name, email, mobile, language } = videoForm;
+                  if (!name || mobile.length !== 10) return;
+                  const msg = `Video call request\nName: ${name}\n${email ? `Email: ${email}\n` : ''}Mobile: ${mobile}\nLanguage: ${language}\nProduct: ${product.name} (${product.id})`;
+                  const url = `https://wa.me/7994648644?text=${encodeURIComponent(msg)}`;
+                  window.location.href = url;
+                }}
+                // 9895331916
+                className="w-full bg-teal-600 text-white py-3 rounded font-semibold hover:bg-teal-700 transition-colors disabled:opacity-50"
+                disabled={!videoForm.name || videoForm.mobile.length !== 10}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Trial At Home Modal */}
+      {showTrialModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+          <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-md p-6 relative">
+            <button
+              aria-label="Close"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              onClick={() => setShowTrialModal(false)}
+            >
+              ×
+            </button>
+            <h3 className="text-xl font-semibold text-gray-900 mb-4">Request Trial At Home</h3>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Name *</label>
+                <input
+                  type="text"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  value={trialForm.name}
+                  onChange={(e) => setTrialForm({ ...trialForm, name: e.target.value })}
+                  placeholder="Enter your full name"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Mobile Number *</label>
+                <input
+                  type="tel"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  placeholder="10-digit number"
+                  value={trialForm.mobile}
+                  onChange={(e) => setTrialForm({ ...trialForm, mobile: e.target.value.replace(/[^0-9]/g, '') })}
+                  maxLength={10}
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 mb-1">Current Location *</label>
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-600"
+                    placeholder="Enter your address"
+                    value={trialForm.location}
+                    onChange={(e) => setTrialForm({ ...trialForm, location: e.target.value })}
+                  />
+                  <button
+                    onClick={() => {
+                      if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(
+                          (position) => {
+                            const { latitude, longitude } = position.coords;
+                            // Reverse geocoding - you can use a service like Google Maps API
+                            // For now, we'll use the coordinates
+                            setTrialForm({ 
+                              ...trialForm, 
+                              location: `https://www.google.com/maps/search/?api=1&query=${latitude.toFixed(6)},${longitude.toFixed(6)}` 
+                            });
+                          },
+                          (error) => {
+                            alert('Unable to get location. Please enter manually.');
+                          }
+                        );
+                      } else {
+                        alert('Geolocation is not supported by this browser.');
+                      }
+                    }}
+                    className="px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-50 transition-colors text-sm"
+                    title="Use current location"
+                  >
+                                         <span className="inline-flex items-center justify-center bg-white rounded-full p-1">
+                      <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <clipPath id="gmapsPin">
+                            <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6z" />
+                          </clipPath>
+                        </defs>
+                        <g clipPath="url(#gmapsPin)">
+                          <rect x="0" y="0" width="12" height="12" fill="#EA4335" />
+                          <rect x="12" y="0" width="12" height="8" fill="#4285F4" />
+                          <rect x="0" y="12" width="12" height="12" fill="#FBBC05" />
+                          <rect x="12" y="8" width="12" height="16" fill="#34A853" />
+                        </g>
+                        <path d="M12 2C8.686 2 6 4.686 6 8c0 4.5 6 12 6 12s6-7.5 6-12c0-3.314-2.686-6-6-6z" stroke="none" fill="none" />
+                        <circle cx="12" cy="8" r="3" fill="#FFFFFF"/>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <button
+                onClick={() => {
+                  const { name, mobile, location } = trialForm;
+                  if (!name || mobile.length !== 10 || !location) return;
+                  const msg = `Trial at home request\nName: ${name}\nMobile: ${mobile}\nLocation: ${location}\nProduct: ${product.name} (${product.id})`;
+                  const url = `https://wa.me/7994648644?text=${encodeURIComponent(msg)}`;
+                  window.location.href = url;
+                }}
+                className="w-full bg-purple-600 text-white py-3 rounded font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50"
+                disabled={!trialForm.name || trialForm.mobile.length !== 10 || !trialForm.location}
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
