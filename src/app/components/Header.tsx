@@ -1,50 +1,148 @@
 'use client';
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import SearchBar from "./SearchBar";
+import DeliveryCheckDialog from "./DeliveryCheckDialog";
 import { useWishlist } from "./WishlistContext";
-
-
-
+import { Heart, Menu, X, Phone, Mail } from "lucide-react";
 
 const Header = () => {
   const { wishlist } = useWishlist();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <>
-      <header className="bg-teal-900 text-white py-3 px-6 flex justify-between items-center sticky top-0 z-50">
-        <div className="text-2xl font-bold">
-          <a href="/" className="cursor-pointer">
-            <img className="w-15 h-15" src="/images/camiyatrans.png" alt="Logo"/>
-          </a>
+      {/* Top bar with contact info */}
+      <div className="bg-gradient-to-r from-teal-800 to-emerald-800 text-white py-2 px-6 hidden lg:block">
+        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
+          <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-2">
+              <Phone size={14} />
+              <span>1800 257 8600</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <Mail size={14} />
+              <span>camiya@gmail.com</span>
+            </div>
+          </div>
+          <div className="text-xs">
+            <span>Premium Diamond Jewelry | Free Shipping on Orders Above ₹50,000</span>
+          </div>
         </div>
-        <div className="hidden md:flex items-center space-x-4 flex-1 justify-center">
-          <SearchBar />
+      </div>
+
+      {/* Main header */}
+      <header className="bg-gradient-to-r from-teal-800 to-emerald-800 shadow-lg sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className="flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center">
+                <img className="w-12 h-12" src="/images/camiyatrans.png" alt="Camiya Diamonds"/>
+              </Link>
+            </div>
+
+            {/* Desktop Search and Delivery Check */}
+            <div className="hidden lg:flex flex-1 max-w-2xl mx-8 space-x-4">
+              <div className="flex-1">
+                <SearchBar />
+              </div>
+              
+              {/* Delivery Check Dialog */}
+              <DeliveryCheckDialog />
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center space-x-8">
+              <Link 
+                href="/category/wishlist" 
+                className="flex items-center space-x-2 text-white hover:text-teal-100 transition-colors duration-300 relative group"
+              >
+                <div className="relative">
+                  <Heart size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                  {wishlist.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-white text-teal-800 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                      {wishlist.length}
+                    </span>
+                  )}
+                </div>
+                <span className="font-medium">Wishlist</span>
+              </Link>
+              
+              <Link 
+                href="/contact" 
+                className="bg-white text-teal-800 px-6 py-2.5 rounded-full font-medium hover:bg-teal-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+              >
+                Contact Us
+              </Link>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="flex lg:hidden items-center space-x-4">
+              <Link 
+                href="/category/wishlist" 
+                className="flex items-center text-white hover:text-teal-100 transition-colors duration-300 relative"
+              >
+                <div className="relative">
+                  <Heart size={20} />
+                  {wishlist.length > 0 && (
+                    <span className="absolute -top-2 -right-2 bg-white text-teal-800 rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold">
+                      {wishlist.length}
+                    </span>
+                  )}
+                </div>
+              </Link>
+              
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="text-white hover:text-teal-100 transition-colors duration-300"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="hidden md:flex items-center space-x-4 flex-none">
-          <Link href="/category/wishlist" className=" flex items-center relative cursor-pointer">
-            <i className="fas fa-heart text-lg mr-1"></i>
-            <span className="font-medium">Wishlist</span>
-            {wishlist.length > 0 && (
-              <span className="ml-1 bg-white text-teal-900 rounded-full px-2 py-0.5 text-xs font-bold">{wishlist.length}</span>
-            )}
-          </Link>
-          <Link href="/contact" className=" cursor-pointer">Contact Us</Link>
-        </div>
-        <div className="flex md:hidden items-center space-x-4">
-          <Link href="/category/wishlist" className="hover:underline flex items-center relative cursor-pointer">
-            <i className="fas fa-heart text-lg mr-1"></i>
-            <span className="font-medium">Wishlist</span>
-            {wishlist.length > 0 && (
-              <span className="ml-1 bg-teal-900 text-white rounded-full px-2 py-0.5 text-xs font-bold border border-white">{wishlist.length}</span>
-            )}
-          </Link>
-          {/* <button className="hover:underline">Contact Us</button> */}
-        </div>
+
+        {/* Mobile menu */}
+        {isMobileMenuOpen && (
+          <div className="lg:hidden bg-white border-t border-gray-100 shadow-lg">
+            <div className="px-6 py-4 space-y-4">
+              <div className="pb-4">
+                <SearchBar />
+              </div>
+              
+              {/* Mobile Delivery Check */}
+              <div className="flex justify-center">
+                <DeliveryCheckDialog />
+              </div>
+              
+              <div className="flex items-center space-x-4 text-sm text-gray-600 border-t pt-4">
+                <div className="flex items-center space-x-2">
+                  <Phone size={14} />
+                  <span>1800 257 8600</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail size={14} />
+                  <span>camiya@gmail.com</span>
+                </div>
+              </div>
+              
+              <Link 
+                href="/contact" 
+                className="block w-full text-center bg-gradient-to-r from-teal-600 to-emerald-600 text-white px-6 py-3 rounded-full font-medium hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg mt-4"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        )}
       </header>
-      {/* Mobile search bar below header */}
-      <div className="block md:hidden bg-white roundness-md px-2 py-2 flex justify-center shadow-md">
-        <SearchBar/>
+
+      {/* Mobile search bar (fallback) */}
+      <div className="block lg:hidden bg-gray-50 px-6 py-3">
+        <SearchBar />
       </div>
     </>
   );

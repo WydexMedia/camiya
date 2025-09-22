@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { Youtube } from "lucide-react";
 
 const Footer = () => {
   const [open, setOpen] = useState({
@@ -26,7 +27,7 @@ const Footer = () => {
           </button>
           {open.general && (
             <ul className="space-y-1 text-gray-300 pb-3">
-              <li><a href="#" className="cursor-pointer">FAQ</a></li>
+              <li><a href="/faq" className="cursor-pointer">FAQ</a></li>
               <li><a href="#" className="cursor-pointer">About us</a></li>
               <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
               <li><a href="#" className="cursor-pointer">Return policy</a></li>
@@ -51,6 +52,7 @@ const Footer = () => {
                 <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
                 <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-linkedin-in hover:text-gray-300"></i></a>
                 <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-instagram hover:text-gray-300"></i></a>
+               
               </div>
             </div>
           )}
@@ -72,7 +74,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3">General info</h4>
             <ul className="space-y-1 text-gray-300">
-              <li><a href="#" className="cursor-pointer">FAQ</a></li>
+              <li><a href="/faq" className="cursor-pointer">FAQ</a></li>
               <li><a href="#" className="cursor-pointer">About us</a></li>
               <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
               <li><a href="#" className="cursor-pointer">Return policy</a></li>
@@ -95,6 +97,7 @@ const Footer = () => {
               <div className="flex justify-center space-x-4 text-xl text-white">
                 <a href="https://www.facebook.com/camiyadiamonds/" className="cursor-pointer"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
                 <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-instagram hover:text-gray-300"></i></a>
+               <a href="https://www.youtube.com/@camiyadiamonds" className="cursor-pointer"><i className="fab fa-youtube hover:text-gray-300"></i></a>
               </div>
             </div>
           </div>

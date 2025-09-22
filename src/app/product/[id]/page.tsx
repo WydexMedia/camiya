@@ -5,12 +5,13 @@ import Link from 'next/link';
 import productsData from '../../data/products.json';
 import Image from 'next/image';
 import BuyNowPopup from '../../components/form';
+import DeliveryCheckDialog from '../../components/DeliveryCheckDialog';
 import { useWishlist } from '../../components/WishlistContext';
 import { toast } from 'sonner';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Header from '../../components/Header';
 import NavCategories from '../../components/NavCategories';
-import { Heart, Share2 } from 'lucide-react';
+import { Heart, Share2, Truck, ShoppingCart } from 'lucide-react';
 
 type Product = {
   id: string;
@@ -66,10 +67,10 @@ const ProductView = () => {
     <div className="min-h-screen bg-gray-50">
       <Header />
       <NavCategories />
-      <div className="py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-4">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex mb-8" aria-label="Breadcrumb">
+        <nav className="flex mb-4" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
               <button 
@@ -93,28 +94,40 @@ const ProductView = () => {
           </ol>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Product Images */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             {/* Main Image */}
-            <div className="aspect-square bg-white rounded-lg overflow-hidden shadow-lg">
+            <div className="aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-lg relative">
               <Image 
                 src={productImages[selectedImage]} 
                 alt={product.category}
                 width={800}
-                height={800}
+                height={600}
                 className="w-full h-full object-contain"
                 priority
               />
+              
+              {/* Reviews Badge */}
+              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
+                <div className="flex items-center gap-1">
+                  <span className="text-sm font-medium text-gray-700">0</span>
+                  <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  <span className="text-sm text-gray-600">0 Reviews</span>
+                </div>
+              </div>
             </div>
             
             {/* Thumbnail Images */}
-            <div className="grid grid-cols-4 gap-2">
+            <div className="flex justify-end">
+              <div className="grid grid-cols-4 gap-2 w-fit">
               {productImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-square bg-white rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
+                  className={`aspect-[4/3] bg-white rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
                     selectedImage === index ? 'border-teal-500' : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -122,20 +135,21 @@ const ProductView = () => {
                     src={image} 
                     alt={`${product.category} ${index + 1}`}
                     width={200}
-                    height={200}
+                    height={150}
                     className="w-full h-full object-contain"
                     loading="eager"
                   />
                 </button>
               ))}
+              </div>
             </div>
           </div>
 
           {/* Product Details */}
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+                <h1 className="text-2xl font-bold text-gray-900">{product.name}</h1>
                 <div className="flex items-center gap-3">
                   <button
                     onClick={async () => {
@@ -206,16 +220,28 @@ const ProductView = () => {
                       fill={wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'currentColor' : 'none'}
                     />
                   </button>
+                  <button
+                    onClick={() => {
+                      toast.success("Added to cart", {
+                        duration: 3000,
+                        position: "bottom-right",
+                      });
+                    }}
+                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-colors"
+                    aria-label="Add to cart"
+                  >
+                    <ShoppingCart size={20} />
+                  </button>
                 </div>
               </div>
-              <p className="text-lg text-gray-600">{product.category} - Premium Diamond Jewelry</p>
+              <p className="text-base text-gray-600">{product.category} - Premium Diamond Jewelry</p>
               <p className="text-sm text-gray-500 mt-1">Product ID: {product.id}</p>
             </div>
 
             {/* Price */}
-            <div className="border-t border-b border-gray-200 py-4">
+            <div className="border-t border-b border-gray-200 py-3">
               <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
+                <span className="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</span>
                 <span className="ml-2 text-sm text-gray-500">Inclusive of all taxes</span>
               </div>
               <p className="text-sm text-green-600 mt-1">Free delivery</p>
@@ -223,98 +249,109 @@ const ProductView = () => {
 
               {/* request at home */}
             {/* Quick Actions */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                onClick={() => setShowVideoModal(true)}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
-                aria-label="Request video call"
+            <div className="space-y-2 pt-2">
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setShowVideoModal(true)}
+                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 py-2 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                  aria-label="Request video call"
+                >
+                  <div className="relative">
+                    <svg 
+                      className="h-6 w-6 group-hover:animate-pulse" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path 
+                        d="M15 10L21 6V18L15 14V10Z" 
+                        fill="currentColor" 
+                        className="drop-shadow-sm"
+                      />
+                      <path 
+                        d="M3 6C3 4.89543 3.89543 4 5 4H13C14.1046 4 15 4.89543 15 6V18C15 19.1046 14.1046 20 13 20H5C3.89543 20 3 19.1046 3 18V6Z" 
+                        fill="currentColor" 
+                        className="drop-shadow-sm"
+                      />
+                      <circle 
+                        cx="9" 
+                        cy="12" 
+                        r="2" 
+                        fill="white" 
+                        className="drop-shadow-sm"
+                      />
+                      <path 
+                        d="M17 8L21 6V18L17 16V8Z" 
+                        fill="currentColor" 
+                        fillOpacity="0.7" 
+                        className="drop-shadow-sm"
+                      />
+                    </svg>
+                  </div>
+                  <span className="font-medium text-sm">Request Video Call</span>
+                </button>
+                <button
+                  onClick={() => setShowTrialModal(true)}
+                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                  aria-label="Request trial at home"
+                >
+                  <div className="relative">
+                    <svg 
+                      className="h-6 w-6 group-hover:animate-pulse" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path 
+                        d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        className="drop-shadow-sm"
+                      />
+                      <path 
+                        d="M9 7V5C9 4.44772 9.44772 4 10 4H14C14.5523 4 15 4.44772 15 5V7" 
+                        stroke="currentColor" 
+                        strokeWidth="2" 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round"
+                        className="drop-shadow-sm"
+                      />
+                    </svg>
+                  </div>
+                  <span className="font-medium text-sm">Trial At Home</span>
+                </button>
+                <DeliveryCheckDialog />
+              </div>
+              
+              {/* Buy Now Button */}
+              <button 
+                onClick={() => setShowForm(true)}
+                className="w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold text-base hover:bg-teal-700 transition-colors cursor-pointer"
               >
-                <div className="relative">
-                  <svg 
-                    className="h-6 w-6 group-hover:animate-pulse" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path 
-                      d="M15 10L21 6V18L15 14V10Z" 
-                      fill="currentColor" 
-                      className="drop-shadow-sm"
-                    />
-                    <path 
-                      d="M3 6C3 4.89543 3.89543 4 5 4H13C14.1046 4 15 4.89543 15 6V18C15 19.1046 14.1046 20 13 20H5C3.89543 20 3 19.1046 3 18V6Z" 
-                      fill="currentColor" 
-                      className="drop-shadow-sm"
-                    />
-                    <circle 
-                      cx="9" 
-                      cy="12" 
-                      r="2" 
-                      fill="white" 
-                      className="drop-shadow-sm"
-                    />
-                    <path 
-                      d="M17 8L21 6V18L17 16V8Z" 
-                      fill="currentColor" 
-                      fillOpacity="0.7" 
-                      className="drop-shadow-sm"
-                    />
-                  </svg>
-                </div>
-                <span className="font-semibold">Request Video Call</span>
-              </button>
-              <button
-                onClick={() => setShowTrialModal(true)}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
-                aria-label="Request trial at home"
-              >
-                <div className="relative">
-                  <svg 
-                    className="h-6 w-6 group-hover:animate-pulse" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path 
-                      d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="drop-shadow-sm"
-                    />
-                    <path 
-                      d="M9 7V5C9 4.44772 9.44772 4 10 4H14C14.5523 4 15 4.44772 15 5V7" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round"
-                      className="drop-shadow-sm"
-                    />
-                  </svg>
-                </div>
-                <span className="font-semibold">Trial At Home</span>
+                Buy Now
               </button>
             </div>
 
 
             {/* Product Specifications */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Product Specifications</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-3 rounded">
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold text-gray-900">Product Specifications</h3>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="bg-gray-50 p-2 rounded">
                   <p className="text-sm text-gray-500">Weight</p>
                   <p className="font-medium">{product.weight}</p>
                 </div>
-                <div className="bg-gray-50 p-3 rounded">
+                <div className="bg-gray-50 p-2 rounded">
                   <p className="text-sm text-gray-500">Purity</p>
                   <p className="font-medium">{product.purity}</p>
                 </div>
-                <div className="bg-gray-50 p-3 rounded">
+                <div className="bg-gray-50 p-2 rounded">
                   <p className="text-sm text-gray-500">Stones</p>
                   <p className="font-medium">{product.stones}</p>
                 </div>
-                <div className="bg-gray-50 p-3 rounded">
+                <div className="bg-gray-50 p-2 rounded">
                   <p className="text-sm text-gray-500">Category</p>
                   <p className="font-medium">{product.category}</p>
                 </div>
@@ -322,9 +359,9 @@ const ProductView = () => {
             </div>
 
             {/* Product Features */}
-            <div className="space-y-4">
-              <h3 className="text-lg font-semibold text-gray-900">Product Features</h3>
-              <ul className="space-y-2 text-gray-600">
+            <div className="space-y-3">
+              <h3 className="text-base font-semibold text-gray-900">Product Features</h3>
+              <ul className="space-y-1 text-gray-600">
                 <li className="flex items-center">
                   <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -353,23 +390,17 @@ const ProductView = () => {
             </div>
 
             {/* Action Buttons */}
-            <div className="space-y-4 pt-6">
-              <button 
-                onClick={() => setShowForm(true)}
-                className="w-full bg-teal-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-700 transition-colors cursor-pointer"
-              >
-                Buy Now
-              </button>
-              
-              <button className="w-full border-2 border-teal-600 text-teal-600 py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-50 transition-colors cursor-pointer">
-                Add to Cart
-              </button>
+            <div className="space-y-3 pt-4">
+              {/* Additional action buttons can be added here */}
             </div>
 
             {/* Delivery Info */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <h4 className="font-semibold text-gray-900 mb-2">Delivery Information</h4>
-              <div className="space-y-2 text-sm text-gray-600">
+            <div className="bg-gray-50 p-3 rounded-lg">
+              <div className="flex items-center justify-between mb-2">
+                <h4 className="font-semibold text-gray-900">Delivery Information</h4>
+               
+              </div>
+              <div className="space-y-1 text-sm text-gray-600">
                 <p>• Free delivery on orders above ₹50,000</p>
                 <p>• Estimated delivery: 3-5 business days</p>
                 <p>• Cash on delivery available</p>
