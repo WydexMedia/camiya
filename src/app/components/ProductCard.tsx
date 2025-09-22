@@ -1,6 +1,6 @@
 import React from "react";
 import { useWishlist } from "./WishlistContext";
-import { useWishlistNotification } from "./WishlistNotificationContext";
+import { toast } from "sonner";
 
 
 type Product = {
@@ -45,7 +45,6 @@ const formatPrice = (price: number) =>
 
 const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
   const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
-  const { notify } = useWishlistNotification();
 
   const isWishlisted = wishlist.some(
     (p) =>
@@ -61,7 +60,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
   const handleWishlist = () => {
     if (!isWishlisted) {
       addToWishlist(product);
-      notify("Added to wishlist");
+      toast.success("Added to wishlist", {
+        duration: 3000,
+        position: "bottom-right",
+      });
       // Reset animation if clicked rapidly
       setAnimate(false);
       void heartRef.current?.offsetWidth; // Force reflow
@@ -69,7 +71,10 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
       setTimeout(() => setAnimate(false), 700); // Animation duration
     } else {
       removeFromWishlist(product);
-      notify("Removed from wishlist");
+      toast.success("Removed from wishlist", {
+        duration: 3000,
+        position: "bottom-right",
+      });
     }
   };
 

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import productsData from "../data/products.json";
 import Link from "next/link";
+import { Search } from "lucide-react";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -32,7 +33,7 @@ const SearchBar = () => {
 
   return (
     <div className="relative w-full max-w-md mx-4">
-      <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm">🔍</span>
+      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-4 h-4" />
       <input
         type="text"
         placeholder="Search for diamond jewellery"
@@ -48,7 +49,7 @@ const SearchBar = () => {
             <Link
               href={"/category/" + encodeURIComponent(item.category)}
               key={idx}
-              className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 text-gray-800"
+              className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 text-gray-800 cursor-pointer"
               onClick={() => setShowDropdown(false)}
             >
               <img src={item.image} alt={item.category} className="w-10 h-10 object-contain rounded" />

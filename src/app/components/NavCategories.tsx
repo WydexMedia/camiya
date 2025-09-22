@@ -14,7 +14,7 @@ const categories = [
 ];
 
 const NavCategories = () => (
-  <nav className="bg-white border-b border-gray-200 text-sm font-semibold text-gray-700">
+  <nav className="bg-white border-b border-gray-200 text-sm font-semibold text-gray-700 sticky top-[73px] z-40">
     <div
       className="flex md:justify-center space-x-8 md:space-x-20 py-3 overflow-x-auto scrollbar-hide px-2 md:px-0"
       style={{ WebkitOverflowScrolling: 'touch' }}

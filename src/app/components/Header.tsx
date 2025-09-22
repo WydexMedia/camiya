@@ -12,9 +12,9 @@ const Header = () => {
   const { wishlist } = useWishlist();
   return (
     <>
-      <header className="bg-teal-900 text-white py-3 px-6 flex justify-between items-center">
+      <header className="bg-teal-900 text-white py-3 px-6 flex justify-between items-center sticky top-0 z-50">
         <div className="text-2xl font-bold">
-          <a href="/">
+          <a href="/" className="cursor-pointer">
             <img className="w-15 h-15" src="/images/camiyatrans.png" alt="Logo"/>
           </a>
         </div>
@@ -22,17 +22,17 @@ const Header = () => {
           <SearchBar />
         </div>
         <div className="hidden md:flex items-center space-x-4 flex-none">
-          <Link href="/category/wishlist" className="hover:underline flex items-center relative">
+          <Link href="/category/wishlist" className=" flex items-center relative cursor-pointer">
             <i className="fas fa-heart text-lg mr-1"></i>
             <span className="font-medium">Wishlist</span>
             {wishlist.length > 0 && (
               <span className="ml-1 bg-white text-teal-900 rounded-full px-2 py-0.5 text-xs font-bold">{wishlist.length}</span>
             )}
           </Link>
-          <Link href="/contact" className="hover:underline">Contact Us</Link>
+          <Link href="/contact" className=" cursor-pointer">Contact Us</Link>
         </div>
         <div className="flex md:hidden items-center space-x-4">
-          <Link href="/category/wishlist" className="hover:underline flex items-center relative">
+          <Link href="/category/wishlist" className="hover:underline flex items-center relative cursor-pointer">
             <i className="fas fa-heart text-lg mr-1"></i>
             <span className="font-medium">Wishlist</span>
             {wishlist.length > 0 && (

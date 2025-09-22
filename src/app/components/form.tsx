@@ -130,10 +130,10 @@ const BuyNowPopup: React.FC<Props> = ({ product, onClose }) => {
                         {errors.place && <p className="text-red-600 text-sm mt-1">{errors.place}</p>}
 
                         <div className="flex justify-end gap-4">
-                            <button type="button" onClick={onClose} className="text-gray-600 hover:text-red-600">
+                            <button type="button" onClick={onClose} className="text-gray-600 hover:text-red-600 cursor-pointer">
                                 Cancel
                             </button>
-                            <button type="submit" className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">
+                            <button type="submit" className="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700 cursor-pointer">
                                 Submit
                             </button>
                         </div>

@@ -6,7 +6,11 @@ import productsData from '../../data/products.json';
 import Image from 'next/image';
 import BuyNowPopup from '../../components/form';
 import { useWishlist } from '../../components/WishlistContext';
-import { useWishlistNotification } from '../../components/WishlistNotificationContext';
+import { toast } from 'sonner';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import Header from '../../components/Header';
+import NavCategories from '../../components/NavCategories';
+import { Heart, Share2 } from 'lucide-react';
 
 type Product = {
   id: string;
@@ -28,7 +32,6 @@ const ProductView = () => {
   const [showForm, setShowForm] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
-  const { notify } = useWishlistNotification();
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [videoForm, setVideoForm] = useState({ name: "", email: "", mobile: "", language: "English" });
   const [showTrialModal, setShowTrialModal] = useState(false);
@@ -47,7 +50,7 @@ const ProductView = () => {
           <h1 className="text-2xl font-bold text-gray-800 mb-4">Product Not Found</h1>
           <button 
             onClick={() => router.back()}
-            className="px-6 py-3 bg-teal-600 text-white rounded hover:bg-teal-700 transition"
+            className="px-6 py-3 bg-teal-600 text-white rounded hover:bg-teal-700 transition cursor-pointer"
           >
             Go Back
           </button>
@@ -60,7 +63,10 @@ const ProductView = () => {
   const productImages = [product.image, product.image, product.image, product.image];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8">
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <NavCategories />
+      <div className="py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
         <nav className="flex mb-8" aria-label="Breadcrumb">
@@ -68,7 +74,7 @@ const ProductView = () => {
             <li className="inline-flex items-center">
               <button 
                 onClick={() => router.push('/')}
-                className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-teal-600"
+                className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-teal-600 cursor-pointer"
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
@@ -108,7 +114,7 @@ const ProductView = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-square bg-white rounded-lg overflow-hidden border-2 transition-all ${
+                  className={`aspect-square bg-white rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
                     selectedImage === index ? 'border-teal-500' : 'border-gray-200 hover:border-gray-300'
                   }`}
                 >
@@ -128,7 +134,80 @@ const ProductView = () => {
           {/* Product Details */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+              <div className="flex items-center justify-between mb-2">
+                <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={async () => {
+                      const shareData = {
+                        title: product.name,
+                        text: `Check out this beautiful ${product.category} from Camiya Diamonds - ${formatPrice(product.price)}`,
+                        url: window.location.href,
+                      };
+
+                      try {
+                        if (navigator.share) {
+                          await navigator.share(shareData);
+                        } else {
+                          // Fallback: copy to clipboard
+                          await navigator.clipboard.writeText(window.location.href);
+                          toast.success("Link copied to clipboard!", {
+                            duration: 3000,
+                            position: "bottom-right",
+                          });
+                        }
+                      } catch (error) {
+                        // Fallback: copy to clipboard
+                        try {
+                          await navigator.clipboard.writeText(window.location.href);
+                          toast.success("Link copied to clipboard!", {
+                            duration: 3000,
+                            position: "bottom-right",
+                          });
+                        } catch (clipboardError) {
+                          toast.error("Unable to share. Please copy the link manually.", {
+                            duration: 3000,
+                            position: "bottom-right",
+                          });
+                        }
+                      }
+                    }}
+                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-colors"
+                    aria-label="Share product"
+                  >
+                    <Share2 size={20} />
+                  </button>
+                  <button
+                    onClick={() => {
+                      const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
+                      if (!isWishlisted) {
+                        addToWishlist(product);
+                        toast.success("Added to wishlist", {
+                          duration: 3000,
+                          position: "bottom-right",
+                        });
+                      } else {
+                        removeFromWishlist(product);
+                        toast.success("Removed from wishlist", {
+                          duration: 3000,
+                          position: "bottom-right",
+                        });
+                      }
+                    }}
+                    className={`cursor-pointer transition-colors ${
+                      wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) 
+                        ? 'text-red-600' 
+                        : 'text-gray-400 hover:text-red-500'
+                    }`}
+                    aria-label="Toggle wishlist"
+                  >
+                    <Heart 
+                      size={24} 
+                      fill={wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'currentColor' : 'none'}
+                    />
+                  </button>
+                </div>
+              </div>
               <p className="text-lg text-gray-600">{product.category} - Premium Diamond Jewelry</p>
               <p className="text-sm text-gray-500 mt-1">Product ID: {product.id}</p>
             </div>
@@ -147,7 +226,7 @@ const ProductView = () => {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={() => setShowVideoModal(true)}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                 aria-label="Request video call"
               >
                 <div className="relative">
@@ -186,7 +265,7 @@ const ProductView = () => {
               </button>
               <button
                 onClick={() => setShowTrialModal(true)}
-                className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                 aria-label="Request trial at home"
               >
                 <div className="relative">
@@ -277,29 +356,13 @@ const ProductView = () => {
             <div className="space-y-4 pt-6">
               <button 
                 onClick={() => setShowForm(true)}
-                className="w-full bg-teal-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-700 transition-colors"
+                className="w-full bg-teal-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-700 transition-colors cursor-pointer"
               >
                 Buy Now
               </button>
               
-              <button className="w-full border-2 border-teal-600 text-teal-600 py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-50 transition-colors">
+              <button className="w-full border-2 border-teal-600 text-teal-600 py-4 px-6 rounded-lg font-semibold text-lg hover:bg-teal-50 transition-colors cursor-pointer">
                 Add to Cart
-              </button>
-              
-              <button
-                onClick={() => {
-                  const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
-                  if (!isWishlisted) {
-                    addToWishlist(product);
-                    notify("Added to wishlist");
-                  } else {
-                    removeFromWishlist(product);
-                    notify("Removed from wishlist");
-                  }
-                }}
-                className={`w-full border-2 py-4 px-6 rounded-lg font-semibold text-lg transition-colors ${wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'border-red-600 text-red-600 hover:bg-red-50' : 'border-gray-300 text-gray-700 hover:bg-gray-50'}`}
-              >
-                {wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'Remove from Wishlist' : 'Add to Wishlist'}
               </button>
             </div>
 
@@ -390,7 +453,7 @@ const ProductView = () => {
           <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-md p-6 relative">
             <button
               aria-label="Close"
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 cursor-pointer"
               onClick={() => setShowVideoModal(false)}
             >
               ×
@@ -428,18 +491,22 @@ const ProductView = () => {
               </div>
               <div>
                 <label className="block text-sm text-gray-700 mb-1">Preferred Language</label>
-                <select
-                  className="w-full border border-gray-300 rounded px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-teal-600"
+                <Select
                   value={videoForm.language}
-                  onChange={(e) => setVideoForm({ ...videoForm, language: e.target.value })}
+                  onValueChange={(value) => setVideoForm({ ...videoForm, language: value })}
                 >
-                  <option>Malayalam</option>
-                  <option>English</option>
-                  <option>Hindi</option>
-                  <option>Tamil</option>
-                  <option>Kannada</option>
-                  <option>Telugu</option>
-                </select>
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Select language" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="Malayalam">Malayalam</SelectItem>
+                    <SelectItem value="English">English</SelectItem>
+                    <SelectItem value="Hindi">Hindi</SelectItem>
+                    <SelectItem value="Tamil">Tamil</SelectItem>
+                    <SelectItem value="Kannada">Kannada</SelectItem>
+                    <SelectItem value="Telugu">Telugu</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               <button
                 onClick={() => {
@@ -450,7 +517,7 @@ const ProductView = () => {
                   window.location.href = url;
                 }}
                 // 9895331916
-                className="w-full bg-teal-600 text-white py-3 rounded font-semibold hover:bg-teal-700 transition-colors disabled:opacity-50"
+                className="w-full bg-teal-600 text-white py-3 rounded font-semibold hover:bg-teal-700 transition-colors disabled:opacity-50 cursor-pointer"
                 disabled={!videoForm.name || videoForm.mobile.length !== 10}
               >
                 Submit
@@ -466,7 +533,7 @@ const ProductView = () => {
           <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-md p-6 relative">
             <button
               aria-label="Close"
-              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600"
+              className="absolute top-3 right-3 text-gray-400 hover:text-gray-600 cursor-pointer"
               onClick={() => setShowTrialModal(false)}
             >
               ×
@@ -525,7 +592,7 @@ const ProductView = () => {
                         alert('Geolocation is not supported by this browser.');
                       }
                     }}
-                    className="px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-50 transition-colors text-sm"
+                    className="px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-50 transition-colors text-sm cursor-pointer"
                     title="Use current location"
                   >
                                          <span className="inline-flex items-center justify-center bg-white rounded-full p-1">
@@ -556,7 +623,7 @@ const ProductView = () => {
                   const url = `https://wa.me/7994648644?text=${encodeURIComponent(msg)}`;
                   window.location.href = url;
                 }}
-                className="w-full bg-purple-600 text-white py-3 rounded font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50"
+                className="w-full bg-purple-600 text-white py-3 rounded font-semibold hover:bg-purple-700 transition-colors disabled:opacity-50 cursor-pointer"
                 disabled={!trialForm.name || trialForm.mobile.length !== 10 || !trialForm.location}
               >
                 Submit
@@ -565,6 +632,7 @@ const ProductView = () => {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 };

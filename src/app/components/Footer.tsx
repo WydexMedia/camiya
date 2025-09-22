@@ -20,24 +20,24 @@ const Footer = () => {
         </div>
         {/* Accordion Sections */}
         <div className="border-t border-gray-600">
-          <button className="w-full flex justify-between items-center py-3 font-semibold" onClick={() => setOpen(o => ({...o, general: !o.general}))}>
+          <button className="w-full flex justify-between items-center py-3 font-semibold cursor-pointer" onClick={() => setOpen(o => ({...o, general: !o.general}))}>
             General info
             <span>{open.general ? "-" : "+"}</span>
           </button>
           {open.general && (
             <ul className="space-y-1 text-gray-300 pb-3">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Return policy</a></li>
-              <li><a href="#">Terms & conditions</a></li>
-              <li><a href="#">Outlets</a></li>
+              <li><a href="#" className="cursor-pointer">FAQ</a></li>
+              <li><a href="#" className="cursor-pointer">About us</a></li>
+              <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
+              <li><a href="#" className="cursor-pointer">Return policy</a></li>
+              <li><a href="#" className="cursor-pointer">Terms & conditions</a></li>
+              <li><a href="#" className="cursor-pointer">Outlets</a></li>
             </ul>
           )}
         </div>
        
         <div className="border-t border-gray-600">
-          <button className="w-full flex justify-between items-center py-3 font-semibold" onClick={() => setOpen(o => ({...o, contact: !o.contact}))}>
+          <button className="w-full flex justify-between items-center py-3 font-semibold cursor-pointer" onClick={() => setOpen(o => ({...o, contact: !o.contact}))}>
             Contact Us
             <span>{open.contact ? "-" : "+"}</span>
           </button>
@@ -48,9 +48,9 @@ const Footer = () => {
               <p><i className="fas fa-envelope mr-2"></i> camiya@gmail.com</p>
               <p className="font-semibold mt-4 mb-2">Follow us on</p>
               <div className="flex space-x-4 text-xl text-white">
-                <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
-                <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-linkedin-in hover:text-gray-300"></i></a>
-                <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-instagram hover:text-gray-300"></i></a>
+                <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
+                <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-linkedin-in hover:text-gray-300"></i></a>
+                <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-instagram hover:text-gray-300"></i></a>
               </div>
             </div>
           )}
@@ -72,12 +72,12 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-3">General info</h4>
             <ul className="space-y-1 text-gray-300">
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Privacy policy</a></li>
-              <li><a href="#">Return policy</a></li>
-              <li><a href="#">Terms & conditions</a></li>
-              <li><a href="#">Outlets</a></li>
+              <li><a href="#" className="cursor-pointer">FAQ</a></li>
+              <li><a href="#" className="cursor-pointer">About us</a></li>
+              <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
+              <li><a href="#" className="cursor-pointer">Return policy</a></li>
+              <li><a href="#" className="cursor-pointer">Terms & conditions</a></li>
+              <li><a href="#" className="cursor-pointer">Outlets</a></li>
             </ul>
           </div>
         </div>
@@ -93,8 +93,8 @@ const Footer = () => {
             <div>
               <p className="font-semibold mb-2">Follow us on</p>
               <div className="flex justify-center space-x-4 text-xl text-white">
-                <a href="https://www.facebook.com/camiyadiamonds/"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
-                <a href="https://www.instagram.com/camiya.diamonds/?hl=en"><i className="fab fa-instagram hover:text-gray-300"></i></a>
+                <a href="https://www.facebook.com/camiyadiamonds/" className="cursor-pointer"><i className="fab fa-facebook-f hover:text-gray-300"></i></a>
+                <a href="https://www.instagram.com/camiya.diamonds/?hl=en" className="cursor-pointer"><i className="fab fa-instagram hover:text-gray-300"></i></a>
               </div>
             </div>
           </div>
@@ -103,7 +103,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="flex flex-col md:flex-col justify-center items-center border-t border-gray-600 pt-4 text-gray-400 text-center gap-2">
         <p>2025 Camiya Diamonds | All rights reserved</p>
-        <p>Designed & developed by <a href="https://wydexmedia.com">Wydex</a></p>
+        <p>Designed & developed by <a href="https://wydexmedia.com" className="cursor-pointer">Wydex</a></p>
       </div>
     </footer>
   );

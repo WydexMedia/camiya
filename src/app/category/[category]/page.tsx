@@ -128,7 +128,7 @@ export default function CategoryPage() {
         {/* Mobile Filter Button */}
         <div className="flex md:hidden justify-end mb-4">
           <button
-            className="bg-white border border-gray-300 rounded px-4 py-2 text-sm font-medium shadow"
+            className="bg-white border border-gray-300 rounded px-4 py-2 text-sm font-medium shadow cursor-pointer"
             onClick={() => setShowMobileFilter(true)}
           >
             Filter
@@ -140,7 +140,7 @@ export default function CategoryPage() {
             <div className="bg-white rounded shadow-lg p-6 w-11/12 max-w-xs mx-auto">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-lg font-semibold">Filter</h3>
-                <button onClick={() => setShowMobileFilter(false)} className="text-gray-500 text-2xl leading-none">&times;</button>
+                <button onClick={() => setShowMobileFilter(false)} className="text-gray-500 text-2xl leading-none cursor-pointer">&times;</button>
               </div>
               <div className="mb-4">
                 <h4 className="font-medium mb-2">Categories</h4>
@@ -167,7 +167,7 @@ export default function CategoryPage() {
                 </label>
               </div>
               <button
-                className="mt-6 w-full bg-teal-800 text-white py-2 rounded hover:bg-teal-700"
+                className="mt-6 w-full bg-teal-800 text-white py-2 rounded hover:bg-teal-700 cursor-pointer"
                 onClick={() => setShowMobileFilter(false)}
               >
                 Apply

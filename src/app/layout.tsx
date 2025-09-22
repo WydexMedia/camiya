@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { WishlistProvider } from "./components/WishlistContext";
-import { WishlistNotificationProvider } from "./components/WishlistNotificationContext";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,7 +18,8 @@ export const metadata: Metadata = {
   title: "Camiya Diamonds",
   description: "Camiya Diamonds is a leading diamond jewelry brand in India, offering a wide range of diamond jewelry for men and women.",
   icons: {
-    icon: "/favicon.png",
+    icon: 
+    '/favicon.ico'
   },
 };
 
@@ -29,13 +30,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+   
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <WishlistProvider>
-          <WishlistNotificationProvider>
-            {children}
-          </WishlistNotificationProvider>
+          {children}
+          <Toaster />
         </WishlistProvider>
       </body>
     </html>

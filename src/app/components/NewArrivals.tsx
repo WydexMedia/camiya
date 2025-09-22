@@ -5,7 +5,8 @@ import productsData from "../data/products.json";
 import Link from "next/link";
 import Image from "next/image";
 import { useWishlist } from "./WishlistContext";
-import { useWishlistNotification } from "./WishlistNotificationContext";
+import { Heart } from "lucide-react";
+import { toast } from "sonner";
 
 type Product = {
   id: string;
@@ -27,7 +28,6 @@ const NewArrivals = () => {
   const [showForm, setShowForm] = useState(false); // ✅ control modal
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
-  const { notify } = useWishlistNotification();
 
   const maxToShow = 8;
   const showProducts = products.slice(0, maxToShow);
@@ -53,15 +53,24 @@ const NewArrivals = () => {
                   const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
                   if (!isWishlisted) {
                     addToWishlist(product);
-                    notify("Added to wishlist");
+                    toast.success("Added to wishlist", {
+                      duration: 3000,
+                      position: "bottom-right",
+                    });
                   } else {
                     removeFromWishlist(product);
-                    notify("Removed from wishlist");
+                    toast.success("Removed from wishlist", {
+                      duration: 3000,
+                      position: "bottom-right",
+                    });
                   }
                 }}
                 className={`absolute top-2 right-2 text-xl ${wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'text-red-700' : 'text-gray-400'}`}
               >
-                {wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? '❤' : '♡'}
+                <Heart 
+                  size={20} 
+                  fill={wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'currentColor' : 'none'}
+                />
               </button>
             </div>
             <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
