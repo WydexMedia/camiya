@@ -4,6 +4,7 @@ import Link from "next/link";
 const categories = [
   "Rings",
   "Earrings",
+  "Studs",
   "Bangles",
   "Bracelets",
   "Necklaces",

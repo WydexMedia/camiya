@@ -22,6 +22,7 @@ type Product = {
   weight: string;
   purity: string;
   stones: string;
+  colors?: string[];
 };
 
 const formatPrice = (price: number) =>
@@ -37,6 +38,7 @@ const ProductView = () => {
   const [videoForm, setVideoForm] = useState({ name: "", email: "", mobile: "", language: "English" });
   const [showTrialModal, setShowTrialModal] = useState(false);
   const [trialForm, setTrialForm] = useState({ name: "", mobile: "", location: "" });
+  const [selectedColor, setSelectedColor] = useState<string>("");
   
   // Get product ID from URL params
   const productId = parseInt(params.id as string);
@@ -60,8 +62,34 @@ const ProductView = () => {
     );
   }
 
+  // Function to get image based on selected color
+  const getImageForColor = (color: string) => {
+    if (product.colors && product.colors.includes(color)) {
+      if (product.category === "Studs") {
+        return `/images/studs/${product.id}_stud_${color}.png`;
+      } else if (product.category === "Bangles") {
+        return `/images/bangles/${product.id}_bangles_${color}.png`;
+      } else if (product.category === "Pendants") {
+        return `/images/pendants/${product.id}_Pendants_${color}.png`;
+      } else if (product.category === "Bracelets") {
+        return `/images/bracelets/${product.id}_bracelet_${color}.png`;
+      }
+    }
+    return product.image;
+  };
+
+  // Set default color if product has colors
+  React.useEffect(() => {
+    if (product.colors && product.colors.length > 0 && !selectedColor) {
+      setSelectedColor(product.colors[0]);
+    }
+  }, [product.colors, selectedColor]);
+
+  // Get current image based on selected color
+  const currentImage = selectedColor ? getImageForColor(selectedColor) : product.image;
+
   // Generate additional images for the product (using the same image multiple times for demo)
-  const productImages = [product.image, product.image, product.image, product.image];
+  const productImages = [currentImage, currentImage, currentImage, currentImage];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -247,6 +275,28 @@ const ProductView = () => {
               <p className="text-sm text-green-600 mt-1">Free delivery</p>
             </div>
 
+            {/* Color Selection */}
+            {product.colors && product.colors.length > 1 && (
+              <div className="space-y-3">
+                <h3 className="text-lg font-semibold text-gray-900">Select Color</h3>
+                <div className="flex gap-3">
+                  {product.colors.map((color) => (
+                    <button
+                      key={color}
+                      onClick={() => setSelectedColor(color)}
+                      className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 font-medium capitalize ${
+                        selectedColor === color
+                          ? 'border-teal-500 bg-teal-50 text-teal-700'
+                          : 'border-gray-200 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50'
+                      }`}
+                    >
+                      {color}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
               {/* request at home */}
             {/* Quick Actions */}
             <div className="space-y-4 pt-4">
@@ -300,6 +350,12 @@ const ProductView = () => {
                   <p className="text-sm text-gray-500 mb-1">Category</p>
                   <p className="font-semibold text-gray-900">{product.category}</p>
                 </div>
+                {selectedColor && (
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <p className="text-sm text-gray-500 mb-1">Color</p>
+                    <p className="font-semibold text-gray-900 capitalize">{selectedColor}</p>
+                  </div>
+                )}
               </div>
             </div>
 
