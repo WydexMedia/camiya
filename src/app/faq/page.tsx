@@ -1,8 +1,13 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '../components/Header';
 import NavCategories from '../components/NavCategories';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const faqData = [
   {
@@ -68,18 +73,8 @@ const faqData = [
 ];
 
 const FAQPage = () => {
-  const [openItems, setOpenItems] = useState<number[]>([]);
-
-  const toggleItem = (id: number) => {
-    setOpenItems(prev => 
-      prev.includes(id) 
-        ? prev.filter(item => item !== id)
-        : [...prev, id]
-    );
-  };
-
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <NavCategories />
       
@@ -93,38 +88,27 @@ const FAQPage = () => {
         </div>
 
         {/* FAQ Items */}
-        <div className="space-y-4">
+        <Accordion type="multiple" className="space-y-4">
           {faqData.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg shadow-sm border border-gray-200">
-              <button
-                onClick={() => toggleItem(item.id)}
-                className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer"
-              >
+            <AccordionItem key={item.id} value={`item-${item.id}`} className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+              <AccordionTrigger className="px-6 py-4 text-left hover:bg-gray-50 transition-colors cursor-pointer">
                 <h3 className="text-lg font-semibold text-gray-900 pr-4">
                   {item.question}
                 </h3>
-                {openItems.includes(item.id) ? (
-                  <ChevronUp className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="h-5 w-5 text-gray-500 flex-shrink-0" />
-                )}
-              </button>
-              
-              {openItems.includes(item.id) && (
-                <div className="px-6 pb-4">
-                  <div className="border-t border-gray-200 pt-4">
-                    <p className="text-gray-700 leading-relaxed">
-                      {item.answer}
-                    </p>
-                  </div>
+              </AccordionTrigger>
+              <AccordionContent className="px-6 pb-4">
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="text-gray-700 leading-relaxed">
+                    {item.answer}
+                  </p>
                 </div>
-              )}
-            </div>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
 
         {/* Contact Section */}
-        <div className="mt-16 bg-teal-50 rounded-lg p-8 text-center">
+        <div className="mt-16 bg-gradient-to-r from-teal-50 to-emerald-50 rounded-2xl p-8 text-center border border-teal-100 shadow-lg">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Still have questions?</h2>
           <p className="text-gray-600 mb-6">
             Our customer service team is here to help you with any additional questions.
@@ -132,14 +116,14 @@ const FAQPage = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:18002578600"
-              className="inline-flex items-center justify-center px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-xl hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             >
               <span className="mr-2">📞</span>
               Call Us: 1800 257 8600
             </a>
             <a
               href="mailto:camiya@gmail.com"
-              className="inline-flex items-center justify-center px-6 py-3 border-2 border-teal-600 text-teal-600 rounded-lg hover:bg-teal-600 hover:text-white transition-colors cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3 border-2 border-teal-600 text-teal-600 rounded-xl hover:bg-teal-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             >
               <span className="mr-2">✉️</span>
               Email Us

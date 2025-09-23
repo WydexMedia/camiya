@@ -197,16 +197,26 @@ export default function CategoryPage() {
           </div>
           {/* Product Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-            {filteredProducts.map((product, idx) => (
-              <ProductCard
-                key={idx}
-                product={product}
-                onBuyNow={(product) => {
-                  setSelectedProduct(product);
-                  setShowForm(true);
-                }}
-              />
-            ))}
+            {filteredProducts.map((product, idx) => {
+              // Find the actual index in the original products array
+              const actualIndex = products.findIndex(p => 
+                p.image === product.image && 
+                p.category === product.category && 
+                p.price === product.price
+              );
+              
+              return (
+                <ProductCard
+                  key={idx}
+                  product={product}
+                  productIndex={actualIndex}
+                  onBuyNow={(product) => {
+                    setSelectedProduct(product);
+                    setShowForm(true);
+                  }}
+                />
+              );
+            })}
             {filteredProducts.length === 0 && (
               <div className="col-span-full text-center text-gray-500 py-8">No products found.</div>
             )}

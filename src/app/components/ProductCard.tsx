@@ -1,17 +1,22 @@
 import React from "react";
 import { useWishlist } from "./WishlistContext";
 import { toast } from "sonner";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 type Product = {
+  id?: string;
   category: string;
   image: string;
   price: number;
+  name?: string;
 };
 
 interface ProductCardProps {
   product: Product;
   onBuyNow: (product: Product) => void;
+  productIndex?: number;
 }
 
 const WishlistIconClicked = (
@@ -43,8 +48,9 @@ const WishlistIconUnclicked = (
 const formatPrice = (price: number) =>
   "₹ " + price.toLocaleString("en-IN")
 
-const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow, productIndex = 0 }) => {
   const { addToWishlist, removeFromWishlist, wishlist } = useWishlist();
+  const router = useRouter();
 
   const isWishlisted = wishlist.some(
     (p) =>
@@ -78,8 +84,15 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
     }
   };
 
+  const handleCardClick = () => {
+    router.push(`/product/${productIndex}`);
+  };
+
   return (
-    <div className="text-center bg-white rounded shadow border border-gray-200 flex flex-col p-3 sm:p-4 relative">
+    <div 
+      className="text-center bg-white rounded shadow border border-gray-200 flex flex-col p-3 sm:p-4 relative cursor-pointer hover:shadow-lg transition-shadow duration-300"
+      onClick={handleCardClick}
+    >
       <div className="bg-gray-100 p-4 sm:p-6 relative rounded">
         <img
           src={product.image}
@@ -107,11 +120,22 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow }) => {
 
       </div>
       <p className="text-lg font-semibold mt-2">{formatPrice(product.price)}</p>
-      <a href="#" className="text-sm text-teal-700 font-medium block mb-2">
+      <a 
+        href="#" 
+        className="text-sm text-teal-700 font-medium block mb-2"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+        }}
+      >
         Check delivery date
       </a>
       <button
-        onClick={() => onBuyNow(product)}
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          onBuyNow(product);
+        }}
         className="mt-1 px-4 py-2 bg-teal-600 text-white text-sm rounded hover:bg-teal-700 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Buy Now

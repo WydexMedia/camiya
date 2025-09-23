@@ -11,7 +11,7 @@ import { toast } from 'sonner';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Header from '../../components/Header';
 import NavCategories from '../../components/NavCategories';
-import { Heart, Share2, Truck, ShoppingCart } from 'lucide-react';
+import { Heart, Share2, Truck, ShoppingCart, Video, Home } from 'lucide-react';
 
 type Product = {
   id: string;
@@ -64,13 +64,13 @@ const ProductView = () => {
   const productImages = [product.image, product.image, product.image, product.image];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header />
       <NavCategories />
-      <div className="py-4">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex mb-4" aria-label="Breadcrumb">
+        <nav className="flex mb-8" aria-label="Breadcrumb">
           <ol className="inline-flex items-center space-x-1 md:space-x-3">
             <li className="inline-flex items-center">
               <button 
@@ -94,11 +94,11 @@ const ProductView = () => {
           </ol>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Product Images */}
-          <div className="space-y-3">
+          <div className="space-y-6">
             {/* Main Image */}
-            <div className="aspect-[4/3] bg-white rounded-lg overflow-hidden shadow-lg relative">
+            <div className="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl relative border border-gray-100">
               <Image 
                 src={productImages[selectedImage]} 
                 alt={product.category}
@@ -109,7 +109,7 @@ const ProductView = () => {
               />
               
               {/* Reviews Badge */}
-              <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-2 rounded-lg shadow-md">
+              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-200">
                 <div className="flex items-center gap-1">
                   <span className="text-sm font-medium text-gray-700">0</span>
                   <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
@@ -122,13 +122,13 @@ const ProductView = () => {
             
             {/* Thumbnail Images */}
             <div className="flex justify-end">
-              <div className="grid grid-cols-4 gap-2 w-fit">
+              <div className="grid grid-cols-4 gap-3 w-fit">
               {productImages.map((image, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedImage(index)}
-                  className={`aspect-[4/3] bg-white rounded-lg overflow-hidden border-2 transition-all cursor-pointer ${
-                    selectedImage === index ? 'border-teal-500' : 'border-gray-200 hover:border-gray-300'
+                  className={`aspect-[4/3] bg-white rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md ${
+                    selectedImage === index ? 'border-teal-500 shadow-lg scale-105' : 'border-gray-200 hover:border-teal-300'
                   }`}
                 >
                   <Image 
@@ -146,11 +146,11 @@ const ProductView = () => {
           </div>
 
           {/* Product Details */}
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h1 className="text-2xl font-bold text-gray-900">{product.name}</h1>
-                <div className="flex items-center gap-3">
+                <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
+                <div className="flex items-center gap-4">
                   <button
                     onClick={async () => {
                       const shareData = {
@@ -186,7 +186,7 @@ const ProductView = () => {
                         }
                       }
                     }}
-                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-colors"
+                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-all duration-300 hover:scale-110"
                     aria-label="Share product"
                   >
                     <Share2 size={20} />
@@ -208,7 +208,7 @@ const ProductView = () => {
                         });
                       }
                     }}
-                    className={`cursor-pointer transition-colors ${
+                    className={`cursor-pointer transition-all duration-300 hover:scale-110 ${
                       wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) 
                         ? 'text-red-600' 
                         : 'text-gray-400 hover:text-red-500'
@@ -227,7 +227,7 @@ const ProductView = () => {
                         position: "bottom-right",
                       });
                     }}
-                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-colors"
+                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-all duration-300 hover:scale-110"
                     aria-label="Add to cart"
                   >
                     <ShoppingCart size={20} />
@@ -239,9 +239,9 @@ const ProductView = () => {
             </div>
 
             {/* Price */}
-            <div className="border-t border-b border-gray-200 py-3">
+            <div className="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-6">
               <div className="flex items-baseline">
-                <span className="text-2xl font-bold text-gray-900">{formatPrice(product.price)}</span>
+                <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
                 <span className="ml-2 text-sm text-gray-500">Inclusive of all taxes</span>
               </div>
               <p className="text-sm text-green-600 mt-1">Free delivery</p>
@@ -249,78 +249,23 @@ const ProductView = () => {
 
               {/* request at home */}
             {/* Quick Actions */}
-            <div className="space-y-2 pt-2">
-              <div className="flex flex-wrap items-center gap-3">
+            <div className="space-y-4 pt-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => setShowVideoModal(true)}
-                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 py-2 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                   aria-label="Request video call"
                 >
-                  <div className="relative">
-                    <svg 
-                      className="h-6 w-6 group-hover:animate-pulse" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path 
-                        d="M15 10L21 6V18L15 14V10Z" 
-                        fill="currentColor" 
-                        className="drop-shadow-sm"
-                      />
-                      <path 
-                        d="M3 6C3 4.89543 3.89543 4 5 4H13C14.1046 4 15 4.89543 15 6V18C15 19.1046 14.1046 20 13 20H5C3.89543 20 3 19.1046 3 18V6Z" 
-                        fill="currentColor" 
-                        className="drop-shadow-sm"
-                      />
-                      <circle 
-                        cx="9" 
-                        cy="12" 
-                        r="2" 
-                        fill="white" 
-                        className="drop-shadow-sm"
-                      />
-                      <path 
-                        d="M17 8L21 6V18L17 16V8Z" 
-                        fill="currentColor" 
-                        fillOpacity="0.7" 
-                        className="drop-shadow-sm"
-                      />
-                    </svg>
-                  </div>
-                  <span className="font-medium text-sm">Request Video Call</span>
+                  <Video className="h-6 w-6 group-hover:animate-pulse" />
+                  <span className="font-semibold text-base">Request Video Call</span>
                 </button>
                 <button
                   onClick={() => setShowTrialModal(true)}
-                  className="group inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
                   aria-label="Request trial at home"
                 >
-                  <div className="relative">
-                    <svg 
-                      className="h-6 w-6 group-hover:animate-pulse" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path 
-                        d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                        className="drop-shadow-sm"
-                      />
-                      <path 
-                        d="M9 7V5C9 4.44772 9.44772 4 10 4H14C14.5523 4 15 4.44772 15 5V7" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round"
-                        className="drop-shadow-sm"
-                      />
-                    </svg>
-                  </div>
-                  <span className="font-medium text-sm">Trial At Home</span>
+                  <Home className="h-6 w-6 group-hover:animate-pulse" />
+                  <span className="font-semibold text-base">Trial At Home</span>
                 </button>
                 <DeliveryCheckDialog />
               </div>
@@ -328,7 +273,7 @@ const ProductView = () => {
               {/* Buy Now Button */}
               <button 
                 onClick={() => setShowForm(true)}
-                className="w-full bg-teal-600 text-white py-3 px-4 rounded-lg font-semibold text-base hover:bg-teal-700 transition-colors cursor-pointer"
+                className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
               >
                 Buy Now
               </button>
@@ -336,55 +281,55 @@ const ProductView = () => {
 
 
             {/* Product Specifications */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold text-gray-900">Product Specifications</h3>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="bg-gray-50 p-2 rounded">
-                  <p className="text-sm text-gray-500">Weight</p>
-                  <p className="font-medium">{product.weight}</p>
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-gray-900">Product Specifications</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <p className="text-sm text-gray-500 mb-1">Weight</p>
+                  <p className="font-semibold text-gray-900">{product.weight}</p>
                 </div>
-                <div className="bg-gray-50 p-2 rounded">
-                  <p className="text-sm text-gray-500">Purity</p>
-                  <p className="font-medium">{product.purity}</p>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <p className="text-sm text-gray-500 mb-1">Purity</p>
+                  <p className="font-semibold text-gray-900">{product.purity}</p>
                 </div>
-                <div className="bg-gray-50 p-2 rounded">
-                  <p className="text-sm text-gray-500">Stones</p>
-                  <p className="font-medium">{product.stones}</p>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <p className="text-sm text-gray-500 mb-1">Stones</p>
+                  <p className="font-semibold text-gray-900">{product.stones}</p>
                 </div>
-                <div className="bg-gray-50 p-2 rounded">
-                  <p className="text-sm text-gray-500">Category</p>
-                  <p className="font-medium">{product.category}</p>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <p className="text-sm text-gray-500 mb-1">Category</p>
+                  <p className="font-semibold text-gray-900">{product.category}</p>
                 </div>
               </div>
             </div>
 
             {/* Product Features */}
-            <div className="space-y-3">
-              <h3 className="text-base font-semibold text-gray-900">Product Features</h3>
-              <ul className="space-y-1 text-gray-600">
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <div className="space-y-4">
+              <h3 className="text-lg font-bold text-gray-900">Product Features</h3>
+              <ul className="space-y-3 text-gray-600">
+                <li className="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                  <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Authentic Diamond Certification
+                  <span className="font-medium">Authentic Diamond Certification</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                  <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Lifetime Warranty
+                  <span className="font-medium">Lifetime Warranty</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                  <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  Free Resizing Service
+                  <span className="font-medium">Free Resizing Service</span>
                 </li>
-                <li className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <li className="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
+                  <svg className="w-6 h-6 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
-                  30-Day Return Policy
+                  <span className="font-medium">30-Day Return Policy</span>
                 </li>
               </ul>
             </div>
@@ -395,12 +340,12 @@ const ProductView = () => {
             </div>
 
             {/* Delivery Info */}
-            <div className="bg-gray-50 p-3 rounded-lg">
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold text-gray-900">Delivery Information</h4>
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border border-blue-100 shadow-sm">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="font-bold text-lg text-gray-900">Delivery Information</h4>
                
               </div>
-              <div className="space-y-1 text-sm text-gray-600">
+              <div className="space-y-2 text-sm text-gray-600">
                 <p>• Free delivery on orders above ₹50,000</p>
                 <p>• Estimated delivery: 3-5 business days</p>
                 <p>• Cash on delivery available</p>
@@ -411,23 +356,23 @@ const ProductView = () => {
         </div>
 
         {/* Product Description */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Product Description</h2>
-          <div className="bg-white p-6 rounded-lg shadow-sm">
-            <p className="text-gray-600 leading-relaxed">
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Product Description</h2>
+          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+            <p className="text-gray-700 leading-relaxed text-lg">
               This exquisite {product.name.toLowerCase()} features the finest quality diamonds, 
               carefully selected and expertly crafted by our master artisans. Each piece is designed 
               with attention to detail, ensuring both beauty and durability. The {product.name.toLowerCase()} 
               comes with a certificate of authenticity and is backed by our lifetime warranty.
             </p>
-            <p className="text-gray-600 leading-relaxed mt-4">
+            <p className="text-gray-700 leading-relaxed mt-6 text-lg">
               Perfect for special occasions, this piece makes an ideal gift for your loved ones or 
               a treasured addition to your personal collection. Our commitment to quality ensures 
               that every piece meets the highest standards of excellence.
             </p>
-            <div className="mt-6 pt-6 border-t border-gray-200">
-              <h4 className="font-semibold text-gray-900 mb-3">Care Instructions</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+            <div className="mt-8 pt-8 border-t border-gray-200">
+              <h4 className="font-bold text-xl text-gray-900 mb-4">Care Instructions</h4>
+              <ul className="text-base text-gray-600 space-y-2">
                 <li>• Store in a cool, dry place away from direct sunlight</li>
                 <li>• Clean with a soft cloth and mild soap solution</li>
                 <li>• Avoid contact with chemicals, perfumes, and lotions</li>
@@ -438,9 +383,9 @@ const ProductView = () => {
         </div>
 
         {/* Related Products */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">You May Also Like</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">You May Also Like</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {productsData
               .filter((p: Product) => p.category === product.category && p.id !== product.id)
               .slice(0, 4)
@@ -450,19 +395,19 @@ const ProductView = () => {
                   href={`/product/${productsData.findIndex((p: Product) => p.id === relatedProduct.id)}`}
                   className="group"
                 >
-                  <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                  <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-teal-200">
                     <Image 
                       src={relatedProduct.image} 
                       alt={relatedProduct.name}
                       width={300}
                       height={240}
-                      className="w-full h-32 object-contain mb-3 group-hover:scale-105 transition-transform"
+                      className="w-full h-40 object-contain mb-4 group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
-                    <h3 className="font-medium text-gray-900 text-sm mb-1 group-hover:text-teal-600 transition-colors">
+                    <h3 className="font-semibold text-gray-900 text-base mb-2 group-hover:text-teal-600 transition-colors duration-300">
                       {relatedProduct.name}
                     </h3>
-                    <p className="text-lg font-bold text-gray-900">{formatPrice(relatedProduct.price)}</p>
+                    <p className="text-xl font-bold text-gray-900">{formatPrice(relatedProduct.price)}</p>
                   </div>
                 </Link>
               ))}
