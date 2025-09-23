@@ -286,8 +286,12 @@ const ProductView = () => {
                       onClick={() => setSelectedColor(color)}
                       className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 font-medium capitalize ${
                         selectedColor === color
-                          ? 'border-teal-500 bg-teal-50 text-teal-700'
-                          : 'border-gray-200 bg-white text-gray-700 hover:border-teal-300 hover:bg-teal-50'
+                          ? color === 'gold'
+                            ? 'border-yellow-500 bg-yellow-50 text-yellow-800'
+                            : 'border-rose-400 bg-rose-50 text-rose-800'
+                          : color === 'gold'
+                            ? 'border-yellow-300 bg-white text-yellow-700 hover:border-yellow-400 hover:bg-yellow-50'
+                            : 'border-rose-300 bg-white text-rose-700 hover:border-rose-400 hover:bg-rose-50'
                       }`}
                     >
                       {color}
