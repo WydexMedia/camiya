@@ -39,6 +39,9 @@ const ProductView = () => {
   const [showTrialModal, setShowTrialModal] = useState(false);
   const [trialForm, setTrialForm] = useState({ name: "", mobile: "", location: "" });
   const [selectedColor, setSelectedColor] = useState<string>("");
+  const [isImageLoading, setIsImageLoading] = useState(false);
+  const [imageError, setImageError] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   
   // Get product ID from URL params
   const productId = parseInt(params.id as string);
@@ -65,16 +68,29 @@ const ProductView = () => {
   // Function to get image based on selected color
   const getImageForColor = (color: string) => {
     if (product.colors && product.colors.includes(color)) {
+      let imagePath = "";
+      
       if (product.category === "Studs") {
-        return `/images/studs/${product.id}_stud_${color}.png`;
+        imagePath = `/images/studs/${product.id}_stud_${color}.png`;
       } else if (product.category === "Bangles") {
-        return `/images/bangles/${product.id}_bangles_${color}.png`;
+        imagePath = `/images/bangles/${product.id}_bangles_${color}.png`;
       } else if (product.category === "Pendants") {
-        return `/images/pendants/${product.id}_Pendants_${color}.png`;
+        imagePath = `/images/pendants/${product.id}_Pendants_${color}.png`;
       } else if (product.category === "Bracelets") {
-        return `/images/bracelets/${product.id}_bracelet_${color}.png`;
+        imagePath = `/images/bracelets/${product.id}_bracelet_${color}.png`;
+      } else if (product.category === "Chains") {
+        imagePath = `/images/chain/${product.id}_chain_${color}.png`;
+      } else if (product.category === "Rings") {
+        imagePath = `/images/ring/${product.id}_ring_${color}.png`;
+      }
+      
+      // If we constructed a path, return it (even if the file doesn't exist, let the browser handle 404)
+      if (imagePath) {
+        return imagePath;
       }
     }
+    
+    // Fallback to original image
     return product.image;
   };
 
@@ -87,9 +103,50 @@ const ProductView = () => {
 
   // Get current image based on selected color
   const currentImage = selectedColor ? getImageForColor(selectedColor) : product.image;
-
+  
   // Generate additional images for the product (using the same image multiple times for demo)
   const productImages = [currentImage, currentImage, currentImage, currentImage];
+
+  // Preload all color variant images to prevent flickering
+  React.useEffect(() => {
+    if (product.colors && product.colors.length > 1) {
+      const preloadPromises = product.colors.map((color) => {
+        const imagePath = getImageForColor(color);
+        if (imagePath) {
+          return new Promise((resolve) => {
+            const img = new window.Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => resolve(img); // Resolve even on error to not block
+            img.src = imagePath;
+          });
+        }
+        return Promise.resolve();
+      });
+      
+      // Wait for all images to preload
+      Promise.all(preloadPromises).then(() => {
+        // All images are preloaded and ready for instant switching
+      });
+    }
+  }, [product.colors, product.id, product.category, product.image]);
+
+  // Handle color change with smooth transition
+  const handleColorChange = (color: string) => {
+    if (color !== selectedColor) {
+      setIsTransitioning(true);
+      setImageError(false);
+      
+      // Small delay to start transition, then change color
+      setTimeout(() => {
+        setSelectedColor(color);
+        
+        // End transition after image has time to load
+        setTimeout(() => {
+          setIsTransitioning(false);
+        }, 150);
+      }, 50);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -127,14 +184,36 @@ const ProductView = () => {
           <div className="space-y-6">
             {/* Main Image */}
             <div className="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl relative border border-gray-100">
-              <Image 
-                src={productImages[selectedImage]} 
-                alt={product.category}
-                width={800}
-                height={600}
-                className="w-full h-full object-contain"
-                priority
-              />
+              <div className="relative w-full h-full">
+                <Image 
+                  src={productImages[selectedImage]} 
+                  alt={product.category}
+                  width={800}
+                  height={600}
+                  className={`w-full h-full object-contain transition-opacity duration-200 ease-in-out ${
+                    isTransitioning ? 'opacity-95' : 'opacity-100'
+                  }`}
+                  priority
+                  onError={() => setImageError(true)}
+                />
+                
+                {/* Subtle transition overlay */}
+                {isTransitioning && (
+                  <div className="absolute inset-0 bg-white/10 transition-opacity duration-200"></div>
+                )}
+                
+                {/* Error overlay */}
+                {imageError && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                    <div className="text-center text-gray-500">
+                      <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                      </svg>
+                      <p className="text-sm">Image not available</p>
+                    </div>
+                  </div>
+                )}
+              </div>
               
               {/* Reviews Badge */}
               <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-200">
@@ -164,7 +243,9 @@ const ProductView = () => {
                     alt={`${product.category} ${index + 1}`}
                     width={200}
                     height={150}
-                    className="w-full h-full object-contain"
+                    className={`w-full h-full object-contain transition-opacity duration-200 ease-in-out ${
+                      isTransitioning ? 'opacity-95' : 'opacity-100'
+                    }`}
                     loading="eager"
                   />
                 </button>
@@ -277,25 +358,60 @@ const ProductView = () => {
 
             {/* Color Selection */}
             {product.colors && product.colors.length > 1 && (
-              <div className="space-y-3">
-                <h3 className="text-lg font-semibold text-gray-900">Select Color</h3>
-                <div className="flex gap-3">
+              <div className="space-y-4">
+                <h3 className="text-lg font-bold text-gray-900">Available Colors</h3>
+                <div className="flex items-center gap-4">
                   {product.colors.map((color) => (
-                    <button
-                      key={color}
-                      onClick={() => setSelectedColor(color)}
-                      className={`px-4 py-2 rounded-lg border-2 transition-all duration-300 font-medium capitalize ${
-                        selectedColor === color
-                          ? color === 'gold'
-                            ? 'border-yellow-500 bg-yellow-50 text-yellow-800'
-                            : 'border-rose-400 bg-rose-50 text-rose-800'
-                          : color === 'gold'
-                            ? 'border-yellow-300 bg-white text-yellow-700 hover:border-yellow-400 hover:bg-yellow-50'
-                            : 'border-rose-300 bg-white text-rose-700 hover:border-rose-400 hover:bg-rose-50'
-                      }`}
-                    >
-                      {color}
-                    </button>
+                    <div key={color} className="flex flex-col items-center space-y-2">
+                      <button
+                        onClick={() => handleColorChange(color)}
+                        className={`relative w-12 h-12 rounded-full transition-all duration-500 ease-out transform focus:outline-none ${
+                          selectedColor === color
+                            ? 'scale-110 shadow-2xl'
+                            : 'hover:scale-105 hover:shadow-lg'
+                        }`}
+                        style={{
+                          background: color === 'gold' 
+                            ? 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%)'
+                            : 'linear-gradient(135deg, #E8B4B8 0%, #D4A5A5 50%, #C08497 100%)',
+                          boxShadow: selectedColor === color 
+                            ? color === 'gold'
+                              ? '0 8px 32px rgba(255, 215, 0, 0.4), 0 0 0 3px white, 0 0 0 5px #FFD700'
+                              : '0 8px 32px rgba(232, 180, 184, 0.4), 0 0 0 3px white, 0 0 0 5px #E8B4B8'
+                            : '0 4px 16px rgba(0, 0, 0, 0.1)',
+                        }}
+                        title={`Select ${color} color`}
+                        aria-label={`Select ${color} color`}
+                      >
+                        {/* Glossy overlay effect */}
+                        <div 
+                          className="absolute inset-0 rounded-full opacity-30"
+                          style={{
+                            background: 'linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 50%, rgba(0,0,0,0.1) 100%)'
+                          }}
+                        />
+                        
+                        {/* Selected state indicator */}
+                        {selectedColor === color && (
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg">
+                              <svg className="w-3 h-3 text-gray-800" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                          </div>
+                        )}
+                      </button>
+                      
+                      {/* Color name label */}
+                      <span className={`text-sm font-medium transition-all duration-300 capitalize ${
+                        selectedColor === color 
+                          ? 'text-gray-900 font-semibold' 
+                          : 'text-gray-600'
+                      }`}>
+                        {color}
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>

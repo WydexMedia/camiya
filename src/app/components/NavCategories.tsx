@@ -11,20 +11,21 @@ const categories = [
   "Nose Pins",
   "Pendants",
   "Charms",
+  "Chains",
   "Guinness",
 ];
 
 const NavCategories = () => (
   <nav className="bg-white border-b border-gray-200 text-sm font-semibold text-gray-700 sticky top-[73px] z-40">
     <div
-      className="flex md:justify-center space-x-8 md:space-x-20 py-3 overflow-x-auto scrollbar-hide px-2 md:px-0"
+      className="flex justify-center space-x-4 md:space-x-8 lg:space-x-12 py-3 overflow-x-auto scrollbar-hide px-4"
       style={{ WebkitOverflowScrolling: 'touch' }}
     >
       {categories.map((cat) => (
         <Link
           key={cat}
           href={`/category/${encodeURIComponent(cat)}`}
-          className="hover:text-teal-700 uppercase whitespace-nowrap px-2 md:px-0"
+          className="hover:text-teal-700 uppercase whitespace-nowrap px-1 md:px-2 text-center min-w-fit"
         >
           {cat}
         </Link>
