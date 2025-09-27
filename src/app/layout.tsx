@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Camiya Diamonds",
-  description: "Camiya Diamonds is a leading diamond jewelry brand in India, offering a wide range of diamond jewelry for men and women.",
+  description: "Camiya Diamonds is a leading diamond jewellery brand in India, offering a wide range of diamond jewelry for men and women.",
   icons: {
     icon: 
     '/favicon.ico'
