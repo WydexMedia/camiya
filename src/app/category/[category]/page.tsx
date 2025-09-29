@@ -41,6 +41,7 @@ export default function CategoryPage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState<Product[]>([]);
+
  
 
   useEffect(() => {
