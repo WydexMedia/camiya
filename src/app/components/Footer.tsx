@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Youtube } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   const [open, setOpen] = useState({
@@ -29,9 +30,9 @@ const Footer = () => {
             <ul className="space-y-1 text-gray-300 pb-3">
               <li><a href="/faq" className="cursor-pointer">FAQ</a></li>
               <li><a href="#" className="cursor-pointer">About us</a></li>
-              <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
+              <li><a href="/privacy" className="cursor-pointer">Privacy policy</a></li>
               <li><a href="#" className="cursor-pointer">Return policy</a></li>
-              <li><a href="#" className="cursor-pointer">Terms & conditions</a></li>
+              <li><Link href="/terms" className="cursor-pointer">Terms & conditions</Link></li>
               <li><a href="#" className="cursor-pointer">Outlets</a></li>
             </ul>
           )}
@@ -76,9 +77,9 @@ const Footer = () => {
             <ul className="space-y-1 text-gray-300">
               <li><a href="/faq" className="cursor-pointer">FAQ</a></li>
               <li><a href="#" className="cursor-pointer">About us</a></li>
-              <li><a href="#" className="cursor-pointer">Privacy policy</a></li>
+              <li><a href="/privacy" className="cursor-pointer">Privacy policy</a></li>
               <li><a href="#" className="cursor-pointer">Return policy</a></li>
-              <li><a href="#" className="cursor-pointer">Terms & conditions</a></li>
+              <li><Link href="/terms" className="cursor-pointer">Terms & conditions</Link></li>
               <li><a href="#" className="cursor-pointer">Outlets</a></li>
             </ul>
           </div>
