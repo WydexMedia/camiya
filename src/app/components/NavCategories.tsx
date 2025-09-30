@@ -11,7 +11,6 @@ const categories = [
   "Pendants",
   "Charms",
   "Pendant Chain",
-  "Guinness",
 ];
 
 const NavCategories = () => (

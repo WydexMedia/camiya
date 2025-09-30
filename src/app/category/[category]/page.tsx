@@ -19,7 +19,6 @@ const categories = [
   "Pendants",
   "Charms",
   "Pendant Chain",
-  "Guinness",
 ];
 
 type Product = {
