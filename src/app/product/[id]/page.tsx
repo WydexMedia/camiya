@@ -20,7 +20,7 @@ type Product = {
   image: string;
   price: number;
   weight: string;
-  purity: string;
+
   stones: string;
   colors?: string[];
 };
@@ -70,7 +70,7 @@ const ProductView = () => {
     if (product.colors && product.colors.includes(color)) {
       let imagePath = "";
       
-      if (product.category === "Studs") {
+      if (product.category === "Studs" || product.category === "Earrings") {
         imagePath = `/images/studs/${product.id}_stud_${color}.png`;
       } else if (product.category === "Bangles") {
         imagePath = `/images/bangles/${product.id}_bangles_${color}.png`;
@@ -78,7 +78,7 @@ const ProductView = () => {
         imagePath = `/images/pendants/${product.id}_Pendants_${color}.png`;
       } else if (product.category === "Bracelets") {
         imagePath = `/images/bracelets/${product.id}_bracelet_${color}.png`;
-      } else if (product.category === "Chains") {
+      } else if (product.category === "Chains" || product.category === "Pendant Chain") {
         imagePath = `/images/chain/${product.id}_chain_${color}.png`;
       } else if (product.category === "Rings") {
         imagePath = `/images/ring/${product.id}_ring_${color}.png`;
@@ -96,16 +96,34 @@ const ProductView = () => {
 
   // Set default color if product has colors
   React.useEffect(() => {
-    if (product.colors && product.colors.length > 0 && !selectedColor) {
-      setSelectedColor(product.colors[0]);
+    if (product.colors && product.colors.length > 0) {
+      // If no color selected yet, default to first color and sync thumbnail index
+      if (!selectedColor) {
+        setSelectedColor(product.colors[0]);
+        setSelectedImage(0);
+        return;
+      }
+      // Keep thumbnail selection in sync with selectedColor when colors array exists
+      const colorIndex = product.colors.indexOf(selectedColor);
+      if (colorIndex !== -1 && colorIndex !== selectedImage) {
+        setSelectedImage(colorIndex);
+      }
     }
-  }, [product.colors, selectedColor]);
+  }, [product.colors, selectedColor, selectedImage]);
 
   // Get current image based on selected color
   const currentImage = selectedColor ? getImageForColor(selectedColor) : product.image;
   
-  // Generate additional images for the product (using the same image multiple times for demo)
-  const productImages = [currentImage, currentImage, currentImage, currentImage];
+  // Generate images for available colors (gold and rose if available)
+  const productImages = [];
+  if (product.colors && product.colors.length > 0) {
+    product.colors.forEach(color => {
+      productImages.push(getImageForColor(color));
+    });
+  } else {
+    // If no colors available, just show the main image
+    productImages.push(product.image);
+  }
 
   // Preload all color variant images to prevent flickering
   React.useEffect(() => {
@@ -139,6 +157,13 @@ const ProductView = () => {
       // Small delay to start transition, then change color
       setTimeout(() => {
         setSelectedColor(color);
+        // Also sync the selected thumbnail to the chosen color
+        if (product.colors) {
+          const idx = product.colors.indexOf(color);
+          if (idx !== -1) {
+            setSelectedImage(idx);
+          }
+        }
         
         // End transition after image has time to load
         setTimeout(() => {
@@ -186,7 +211,7 @@ const ProductView = () => {
             <div className="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl relative border border-gray-100">
               <div className="relative w-full h-full">
                 <Image 
-                  src={productImages[selectedImage]} 
+                  src={currentImage} 
                   alt={product.category}
                   width={800}
                   height={600}
@@ -228,28 +253,53 @@ const ProductView = () => {
             </div>
             
             {/* Thumbnail Images */}
-            <div className="flex justify-end">
-              <div className="grid grid-cols-4 gap-3 w-fit">
-              {productImages.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedImage(index)}
-                  className={`aspect-[4/3] bg-white rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md ${
-                    selectedImage === index ? 'border-teal-500 shadow-lg scale-105' : 'border-gray-200 hover:border-teal-300'
-                  }`}
-                >
-                  <Image 
-                    src={image} 
-                    alt={`${product.category} ${index + 1}`}
-                    width={200}
-                    height={150}
-                    className={`w-full h-full object-contain transition-opacity duration-200 ease-in-out ${
-                      isTransitioning ? 'opacity-95' : 'opacity-100'
+            <div className="flex justify-center">
+              <div className={`grid gap-3 w-fit ${productImages.length === 1 ? 'grid-cols-1' : productImages.length === 2 ? 'grid-cols-2' : 'grid-cols-4'}`}>
+              {productImages.map((image, index) => {
+                const color = product.colors ? product.colors[index] : null;
+                const isSelected = color ? selectedColor === color : selectedImage === index;
+                
+                return (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      if (color) {
+                        handleColorChange(color);
+                      } else {
+                        setSelectedImage(index);
+                      }
+                    }}
+                    className={`aspect-[4/3] bg-white rounded-xl overflow-hidden border-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-md relative  ${
+                      isSelected ? 'border-teal-500 shadow-lg scale-105' : 'border-gray-200 hover:border-teal-300'
                     }`}
-                    loading="eager"
-                  />
-                </button>
-              ))}
+                    title={color ? `View ${color} color` : `View image ${index + 1}`}
+                  >
+                    <Image 
+                      src={image} 
+                      alt={color ? `${product.category} ${color} color` : `${product.category} ${index + 1}`}
+                      width={150}
+                      height={100}
+                      className={`w-full h-full object-contain transition-opacity duration-200 ease-in-out ${
+                        isTransitioning ? 'opacity-95' : 'opacity-100'
+                      }`}
+                      loading="eager"
+                    />
+                    {/* Color indicator overlay */}
+                    {color && (
+                      <div className="absolute bottom-1 right-1">
+                        <div 
+                          className="w-4 h-4 rounded-full border border-white shadow-sm"
+                          style={{
+                            background: color === 'gold' 
+                              ? 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%)'
+                              : 'linear-gradient(135deg, #E8B4B8 0%, #D4A5A5 50%, #C08497 100%)'
+                          }}
+                        />
+                      </div>
+                    )}
+                  </button>
+                );
+              })}
               </div>
             </div>
           </div>
@@ -458,13 +508,14 @@ const ProductView = () => {
                   <p className="text-sm text-gray-500 mb-1">Weight</p>
                   <p className="font-semibold text-gray-900">{product.weight}</p>
                 </div>
-                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
-                  <p className="text-sm text-gray-500 mb-1">Purity</p>
-                  <p className="font-semibold text-gray-900">{product.purity}</p>
-                </div>
+                
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
                   <p className="text-sm text-gray-500 mb-1">Stones</p>
                   <p className="font-semibold text-gray-900">{product.stones}</p>
+                </div>
+                <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                  <p className="text-sm text-gray-500 mb-1">Diamond Type</p>
+                  <p className="font-semibold text-gray-900">VVS-EF</p>
                 </div>
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
                   <p className="text-sm text-gray-500 mb-1">Category</p>
@@ -479,8 +530,27 @@ const ProductView = () => {
               </div>
             </div>
 
-            {/* Product Features */}
+            {/* Certification Logo */}
             <div className="space-y-4">
+              <h3 className="text-lg font-bold text-gray-900">Certification</h3>
+              <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200 shadow-sm">
+                <div className="flex items-center justify-center">
+                  <Image 
+                    src="/DHC_logo.png" 
+                    alt="DHC Certification Logo"
+                    width={200}
+                    height={100}
+                    className="object-contain"
+                  />
+                </div>
+                <p className="text-center text-sm text-gray-600 mt-3">
+                  Certified by Diamond High Council (DHC)
+                </p>
+              </div>
+            </div>
+
+            {/* Product Features */}
+            {/* <div className="space-y-4">
               <h3 className="text-lg font-bold text-gray-900">Product Features</h3>
               <ul className="space-y-3 text-gray-600">
                 <li className="flex items-center p-3 bg-green-50 rounded-lg border border-green-100">
@@ -508,7 +578,7 @@ const ProductView = () => {
                   <span className="font-medium">30-Day Return Policy</span>
                 </li>
               </ul>
-            </div>
+            </div> */}
 
             {/* Action Buttons */}
             <div className="space-y-3 pt-4">

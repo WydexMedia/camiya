@@ -10,7 +10,7 @@ const categories = [
   "Nose Pins",
   "Pendants",
   "Charms",
-  "Chains",
+  "Pendant Chain",
   "Guinness",
 ];
 

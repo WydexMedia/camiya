@@ -18,6 +18,7 @@ const categories = [
   "Nose Pins",
   "Pendants",
   "Charms",
+  "Pendant Chain",
   "Guinness",
 ];
 
