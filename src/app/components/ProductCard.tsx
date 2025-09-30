@@ -3,6 +3,7 @@ import { useWishlist } from "./WishlistContext";
 import { toast } from "sonner";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 
 type Product = {
@@ -94,9 +95,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow, productInd
       onClick={handleCardClick}
     >
       <div className="bg-gray-100 p-4 sm:p-6 relative rounded">
-        <img
+        <Image
           src={product.image}
           alt={product.category}
+          width={400}
+          height={300}
+          sizes="(min-width: 768px) 25vw, 50vw"
           className="w-full h-40 sm:h-48 object-contain mx-auto"
         />
         <button

@@ -43,7 +43,14 @@ const NewArrivals = () => {
           <div className="text-center group" key={idx}>
             <div className="bg-gray-100 p-4 sm:p-6 relative rounded cursor-pointer hover:shadow-lg transition-all duration-300 group-hover:scale-105">
               <Link href={`/product/${idx}`}>
-                <Image src={product.image} alt={product.category} width={400} height={300} className="w-full h-40 sm:h-48 object-contain mx-auto" loading="eager" priority />
+                <Image 
+                  src={product.image} 
+                  alt={product.category} 
+                  width={400} 
+                  height={300} 
+                  className="w-full h-40 sm:h-48 object-contain mx-auto"
+                  sizes="(min-width: 768px) 25vw, 50vw"
+                />
               </Link>
               <button
                 aria-label="Toggle wishlist"

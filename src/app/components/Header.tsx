@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import SearchBar from "./SearchBar";
 import DeliveryCheckDialog from "./DeliveryCheckDialog";
 import { useWishlist } from "./WishlistContext";
@@ -39,7 +40,7 @@ const Header = () => {
             {/* Logo */}
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <img className="w-12 h-12" src="/images/camiyatrans.png" alt="Camiya Diamonds"/>
+                <Image className="w-12 h-12" src="/images/camiyatrans.png" alt="Camiya Diamonds" width={48} height={48} />
               </Link>
             </div>
 
