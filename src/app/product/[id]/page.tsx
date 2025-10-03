@@ -70,8 +70,13 @@ const ProductView = () => {
     if (product.colors && product.colors.includes(color)) {
       let imagePath = "";
       
-      if (product.category === "Studs" || product.category === "Earrings") {
-        imagePath = `/images/studs/${product.id}_stud_${color}.png`;
+      if (product.category === "Earrings") {
+        // Check if it's a stud or earrings based on the product name
+        if (product.name.toLowerCase().includes("stud")) {
+          imagePath = `/images/studs/${product.id}_stud_${color}.png`;
+        } else {
+          imagePath = `/images/studs/${product.id}_earrings_${color}.png`;
+        }
       } else if (product.category === "Bangles") {
         imagePath = `/images/bangles/${product.id}_bangles_${color}.png`;
       } else if (product.category === "Pendants") {
