@@ -20,7 +20,7 @@ type Product = {
   image: string;
   price: number;
   weight: string;
-
+  diamondWeight?: string;
   stones: string;
   colors?: string[];
 };
@@ -522,6 +522,12 @@ const ProductView = () => {
                   <p className="text-sm text-gray-500 mb-1">Diamond Type</p>
                   <p className="font-semibold text-gray-900">VVS-EF</p>
                 </div>
+                {product.diamondWeight && (
+                  <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
+                    <p className="text-sm text-gray-500 mb-1">Diamond Weight</p>
+                    <p className="font-semibold text-gray-900">{product.diamondWeight}</p>
+                  </div>
+                )}
                 <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-4 rounded-xl border border-gray-200 shadow-sm">
                   <p className="text-sm text-gray-500 mb-1">Category</p>
                   <p className="font-semibold text-gray-900">{product.category}</p>
