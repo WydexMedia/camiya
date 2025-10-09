@@ -23,9 +23,12 @@ const NavCategories = () => (
         <Link
           key={cat}
           href={`/category/${encodeURIComponent(cat)}`}
-          className="hover:text-teal-700 uppercase whitespace-nowrap px-1 md:px-2 text-center min-w-fit"
+          className="relative hover:text-teal-700 uppercase whitespace-nowrap px-1 md:px-2 text-center min-w-fit transition-colors duration-300 group"
         >
-          {cat}
+          <span className="relative">
+            {cat}
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-600 to-emerald-600 group-hover:w-full transition-all duration-300 ease-out"></span>
+          </span>
         </Link>
       ))}
     </div>

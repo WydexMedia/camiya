@@ -94,13 +94,13 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-bold mb-6 tracking-wider">GENERAL INFO</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><Link href="/faq" className="cursor-pointer hover:text-white transition-colors">Faq</Link></li>
-              <li><Link href="/contact" className="cursor-pointer hover:text-white transition-colors">Contact Us</Link></li>
-              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="/privacy" className="cursor-pointer hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors">Return Policy</Link></li>
-              <li><Link href="/terms" className="cursor-pointer hover:text-white transition-colors">Terms & Conditions</Link></li>
-              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors">Outlets</Link></li>
+              <li><Link href="/faq" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Faq<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="/contact" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Contact Us<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">About Us<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="/privacy" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Privacy Policy<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Return Policy<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="/terms" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Terms & Conditions<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
+              <li><Link href="#" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Outlets<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link></li>
             </ul>
           </div>
 
@@ -108,12 +108,12 @@ const Footer = () => {
           <div>
             <h3 className="text-base font-bold mb-6 tracking-wider">QUICK LINKS</h3>
             <div className="grid grid-cols-2 gap-x-8 gap-y-3 text-gray-300">
-              <Link href="/category/Rings" className="cursor-pointer hover:text-white transition-colors">Rings</Link>
-              <Link href="/category/Earrings" className="cursor-pointer hover:text-white transition-colors">Earrings</Link>
-              <Link href="/category/Bracelets" className="cursor-pointer hover:text-white transition-colors">Bracelet</Link>
-              <Link href="/category/Bangles" className="cursor-pointer hover:text-white transition-colors">Bangle</Link>
-              <Link href="/category/Pendants" className="cursor-pointer hover:text-white transition-colors">Pendant</Link>
-              <Link href="/category/Chains" className="cursor-pointer hover:text-white transition-colors">Chains</Link>
+              <Link href="/category/Rings" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Rings<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
+              <Link href="/category/Earrings" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Earrings<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
+              <Link href="/category/Bracelets" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Bracelet<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
+              <Link href="/category/Bangles" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Bangle<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
+              <Link href="/category/Pendants" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Pendant<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
+              <Link href="/category/Chains" className="cursor-pointer hover:text-white transition-colors inline-block relative group"><span className="relative">Chains<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-teal-400 to-emerald-400 group-hover:w-full transition-all duration-300 ease-out"></span></span></Link>
             </div>
           </div>
 
@@ -127,7 +127,7 @@ const Footer = () => {
               </p>
               <p className="flex items-center gap-2">
                 <i className="fas fa-phone-alt"></i>
-                <span>Toll Free Number : 1800 257 8600</span>
+                <span>Toll Free Number : 0000000000</span>
               </p>
               <p className="flex items-center gap-2">
                 <i className="fas fa-envelope"></i>
@@ -149,7 +149,10 @@ const Footer = () => {
                 className="mx-auto"
               />
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
+            <p 
+              className="text-gray-400 text-xs leading-5 font-normal" 
+              style={{ fontFamily: 'Lato, "Lato Fallback", sans-serif' }}
+            >
             Camiya Diamonds was born from a leading name in the wholesale diamond jewellery market—an established business that caters to prominent retail jewellers. Many gold-focused retailers hesitate to introduce diamond jewellery into their collections due to various operational and market challenges, and Camiya Diamonds was created to bridge that gap.
             </p>
           </div>

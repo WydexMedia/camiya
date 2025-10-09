@@ -34,40 +34,43 @@ const SearchBar = () => {
 
   return (
     <div className="relative w-full max-w-md mx-4">
-      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 w-4 h-4" />
+      <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
       <input
         type="text"
-        placeholder="Search for diamond jewellery"
-        className="w-full pl-10 md:pl-10 pr-4 md:pr-4 py-2 md:py-2 rounded-full bg-[#dfe7e7] md:bg-white placeholder-gray-500 text-black focus:outline-none text-xs md:text-sm"
+        placeholder="Search for diamond jewellery..."
+        className="w-full pl-11 pr-4 py-2.5 rounded-full bg-white/95 backdrop-blur-sm placeholder-gray-400 text-gray-800 focus:outline-none focus:ring-2 focus:ring-teal-400/50 focus:bg-white text-sm shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
         value={query}
         onChange={handleChange}
         onFocus={() => query && setShowDropdown(true)}
         onBlur={handleBlur}
       />
       {showDropdown && results.length > 0 && (
-        <div className="absolute left-0 right-0 mt-1 bg-white border border-gray-200 rounded shadow-lg z-50 max-h-72 overflow-y-auto">
+        <div className="absolute left-0 right-0 mt-2 bg-white border border-gray-100 rounded-2xl shadow-2xl z-50 max-h-96 overflow-y-auto backdrop-blur-lg animate-in fade-in slide-in-from-top-2 duration-200">
           {results.map((item, idx) => (
             <Link
               href={"/category/" + encodeURIComponent(item.category)}
               key={idx}
-              className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 text-gray-800 cursor-pointer"
+              className="flex items-center gap-4 px-4 py-3 hover:bg-gradient-to-r hover:from-teal-50 hover:to-emerald-50 text-gray-800 cursor-pointer transition-all duration-200 first:rounded-t-2xl last:rounded-b-2xl border-b border-gray-50 last:border-b-0 group"
               onClick={() => setShowDropdown(false)}
             >
-              <Image 
-                src={item.image} 
-                alt={item.category} 
-                width={40} 
-                height={40} 
-                className="w-10 h-10 object-contain rounded" 
-              />
-              <div>
-                <div className="font-semibold text-xs">{item.category}</div>
-                <div className="text-xs text-gray-500">₹ {item.price.toLocaleString("en-IN")}</div>
+              <div className="relative">
+                <Image 
+                  src={item.image} 
+                  alt={item.category} 
+                  width={48} 
+                  height={48} 
+                  className="w-12 h-12 object-contain rounded-lg shadow-sm group-hover:scale-110 transition-transform duration-200" 
+                />
               </div>
+              <div className="flex-1">
+                <div className="font-semibold text-sm text-gray-900 group-hover:text-teal-700 transition-colors">{item.category}</div>
+                <div className="text-xs text-gray-500 font-medium mt-0.5">₹ {item.price.toLocaleString("en-IN")}</div>
+              </div>
+              <Search className="w-4 h-4 text-gray-300 group-hover:text-teal-500 transition-colors" />
             </Link>
           ))}
           {results.length === 0 && (
-            <div className="px-4 py-2 text-gray-500">No results found.</div>
+            <div className="px-4 py-3 text-gray-500 text-sm">No results found.</div>
           )}
         </div>
       )}
