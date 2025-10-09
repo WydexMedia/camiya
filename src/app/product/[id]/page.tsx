@@ -209,9 +209,9 @@ const ProductView = () => {
           </ol>
         </nav>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Product Images */}
-          <div className="space-y-6">
+          <div className="space-y-4 lg:space-y-6">
             {/* Main Image */}
             <div className="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl relative border border-gray-100">
               <div className="relative w-full h-full">
@@ -306,6 +306,38 @@ const ProductView = () => {
                 );
               })}
               </div>
+            </div>
+
+            {/* Mobile Action Buttons - Show only on mobile */}
+            <div className="block lg:hidden space-y-3 mt-6">
+              {/* Buy Now Button */}
+              <button 
+                onClick={() => setShowForm(true)}
+                className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
+              >
+                Buy Now
+              </button>
+
+              <div className="grid grid-cols-2 gap-3">
+                <button
+                  onClick={() => setShowVideoModal(true)}
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 py-3 rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
+                  aria-label="Request video call"
+                >
+                  <Video className="h-5 w-5" />
+                  <span className="font-semibold text-sm">Video Call</span>
+                </button>
+                <button
+                  onClick={() => setShowTrialModal(true)}
+                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-3 rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
+                  aria-label="Request trial at home"
+                >
+                  <Home className="h-5 w-5" />
+                  <span className="font-semibold text-sm">Trial Home</span>
+                </button>
+              </div>
+              
+              <DeliveryCheckDialog />
             </div>
           </div>
 
@@ -472,9 +504,8 @@ const ProductView = () => {
               </div>
             )}
 
-              {/* request at home */}
-            {/* Quick Actions */}
-            <div className="space-y-4 pt-4">
+              {/* Desktop Action Buttons - Hidden on mobile */}
+            <div className="hidden lg:block space-y-4 pt-4">
               <div className="flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => setShowVideoModal(true)}
