@@ -15,7 +15,11 @@ import {
 import { Truck, CheckCircle, XCircle, Loader2, MapPin, Navigation } from "lucide-react";
 import { toast } from "sonner";
 
-const DeliveryCheckDialog = () => {
+interface DeliveryCheckDialogProps {
+  compact?: boolean;
+}
+
+const DeliveryCheckDialog = ({ compact = false }: DeliveryCheckDialogProps) => {
   const [pincode, setPincode] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isGettingLocation, setIsGettingLocation] = useState(false);
@@ -208,9 +212,9 @@ const DeliveryCheckDialog = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="bg-teal-600 hover:bg-teal-700 text-white text-sm px-4 py-2 rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl">
-          <Truck className="h-4 w-4 mr-2" />
-          Check Delivery
+        <Button className={`bg-teal-600 hover:bg-teal-700 text-white ${compact ? 'px-3 py-2.5 w-full inline-flex items-center justify-center gap-1.5' : 'px-4 py-2'} rounded-lg font-medium transition-colors duration-300 shadow-lg hover:shadow-xl`}>
+          <Truck className="h-4 w-4" />
+          {compact ? <span className="font-semibold text-xs">Check</span> : <span>Check Delivery</span>}
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-md">

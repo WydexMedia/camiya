@@ -179,7 +179,7 @@ const ProductView = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32 lg:pb-8">
       <Header />
       <NavCategories />
       <div className="py-8">
@@ -308,37 +308,8 @@ const ProductView = () => {
               </div>
             </div>
 
-            {/* Mobile Action Buttons - Show only on mobile */}
-            <div className="block lg:hidden space-y-3 mt-6">
-              {/* Buy Now Button */}
-              <button 
-                onClick={() => setShowForm(true)}
-                className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
-              >
-                Buy Now
-              </button>
-
-              <div className="grid grid-cols-2 gap-3">
-                <button
-                  onClick={() => setShowVideoModal(true)}
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-4 py-3 rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
-                  aria-label="Request video call"
-                >
-                  <Video className="h-5 w-5" />
-                  <span className="font-semibold text-sm">Video Call</span>
-                </button>
-                <button
-                  onClick={() => setShowTrialModal(true)}
-                  className="group inline-flex items-center justify-center gap-2 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-3 rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
-                  aria-label="Request trial at home"
-                >
-                  <Home className="h-5 w-5" />
-                  <span className="font-semibold text-sm">Trial Home</span>
-                </button>
-              </div>
-              
-              <DeliveryCheckDialog />
-            </div>
+            {/* Mobile Action Buttons Placeholder - Keep space for fixed buttons */}
+            <div className="block lg:hidden h-32"></div>
           </div>
 
           {/* Product Details */}
@@ -859,7 +830,7 @@ const ProductView = () => {
                     className="px-3 py-2 bg-white text-gray-700 border border-gray-300 rounded hover:bg-gray-50 transition-colors text-sm cursor-pointer"
                     title="Use current location"
                   >
-                                         <span className="inline-flex items-center justify-center bg-white rounded-full p-1">
+                                       <span className="inline-flex items-center justify-center bg-white rounded-full p-1">
                       <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <defs>
                           <clipPath id="gmapsPin">
@@ -896,9 +867,43 @@ const ProductView = () => {
           </div>
         </div>
       )}
+
+      {/* Fixed Mobile Action Bar - Always visible at bottom on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 shadow-2xl z-40">
+        <div className="max-w-7xl mx-auto px-4 py-3 space-y-2">
+          {/* Top Row - Video Call and Trial Home buttons */}
+          <div className="grid grid-cols-3 gap-2">
+            <button
+              onClick={() => setShowVideoModal(true)}
+              className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-3 py-2.5 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-md hover:shadow-lg transform active:scale-95 cursor-pointer"
+              aria-label="Request video call"
+            >
+              <Video className="h-4 w-4" />
+              <span className="font-semibold text-xs">Video</span>
+            </button>
+            <button
+              onClick={() => setShowTrialModal(true)}
+              className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-2.5 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg transform active:scale-95 cursor-pointer"
+              aria-label="Request trial at home"
+            >
+              <Home className="h-4 w-4" />
+              <span className="font-semibold text-xs">Trial</span>
+            </button>
+            <DeliveryCheckDialog compact={true} />
+          </div>
+          
+          {/* Buy Now Button */}
+          <button 
+            onClick={() => setShowForm(true)}
+            className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-bold text-base hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
+          >
+            Buy Now
+          </button>
+        </div>
+      </div>
       </div>
     </div>
   );
 };
 
-export default ProductView; 
+export default ProductView;
