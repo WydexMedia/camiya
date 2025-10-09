@@ -8,10 +8,17 @@ import BuyNowPopup from '../../components/form';
 import DeliveryCheckDialog from '../../components/DeliveryCheckDialog';
 import { useWishlist } from '../../components/WishlistContext';
 import { toast } from 'sonner';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../components/ui/select';
+import { Button } from '../../../components/ui/button';
+import { Badge } from '../../../components/ui/badge';
+import { Separator } from '../../../components/ui/separator';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../../../components/ui/dialog';
+import { Input } from '../../../components/ui/input';
+import { Label } from '../../../components/ui/label';
 import Header from '../../components/Header';
 import NavCategories from '../../components/NavCategories';
-import { Heart, Share2, Truck, ShoppingCart, Video, Home } from 'lucide-react';
+import { Heart, Share2, Truck, ShoppingCart, Video, Home, Star, Shield, Award, Package, ChevronRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 type Product = {
   id: string;
@@ -52,14 +59,16 @@ const ProductView = () => {
   if (!product) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-800 mb-4">Product Not Found</h1>
-          <button 
+        <div className="text-center space-y-4">
+          <Package className="w-16 h-16 mx-auto text-gray-400" />
+          <h1 className="text-2xl font-bold text-gray-800">Product Not Found</h1>
+          <p className="text-gray-600">The product you're looking for doesn't exist.</p>
+          <Button 
             onClick={() => router.back()}
-            className="px-6 py-3 bg-teal-600 text-white rounded hover:bg-teal-700 transition cursor-pointer"
+            className="mt-4"
           >
             Go Back
-          </button>
+          </Button>
         </div>
       </div>
     );
@@ -179,32 +188,39 @@ const ProductView = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pb-32 lg:pb-8">
+    <div className="min-h-screen bg-gray-50 pb-32 lg:pb-8">
       <Header />
       <NavCategories />
-      <div className="py-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-6">
+      <div className="container mx-auto px-4">
         {/* Breadcrumb */}
-        <nav className="flex mb-8" aria-label="Breadcrumb">
-          <ol className="inline-flex items-center space-x-1 md:space-x-3">
+        <nav className="flex mb-6" aria-label="Breadcrumb">
+          <ol className="inline-flex items-center space-x-2">
             <li className="inline-flex items-center">
-              <button 
+              <Button 
+                variant="ghost"
+                size="sm"
                 onClick={() => router.push('/')}
-                className="inline-flex items-center text-sm font-medium text-gray-700 hover:text-teal-600 cursor-pointer"
+                className="inline-flex items-center text-sm font-medium text-gray-600 hover:text-teal-600"
               >
-                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                </svg>
+                <Home className="w-4 h-4 mr-1" />
                 Home
-              </button>
+              </Button>
             </li>
+            <ChevronRight className="w-4 h-4 text-gray-400" />
             <li>
-              <div className="flex items-center">
-                <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="ml-1 text-sm font-medium text-gray-500 md:ml-2">{product.category}</span>
-              </div>
+              <Button 
+                variant="ghost"
+                size="sm"
+                onClick={() => router.push(`/category/${encodeURIComponent(product.category)}`)}
+                className="text-sm font-medium text-gray-600 hover:text-teal-600"
+              >
+                {product.category}
+              </Button>
+            </li>
+            <ChevronRight className="w-4 h-4 text-gray-400" />
+            <li>
+              <span className="text-sm font-medium text-gray-900">{product.name}</span>
             </li>
           </ol>
         </nav>
@@ -213,7 +229,12 @@ const ProductView = () => {
           {/* Product Images */}
           <div className="space-y-4 lg:space-y-6">
             {/* Main Image */}
-            <div className="aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-2xl relative border border-gray-100">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-md relative border"
+            >
               <div className="relative w-full h-full">
                 <Image 
                   src={currentImage} 
@@ -236,26 +257,30 @@ const ProductView = () => {
                 {imageError && (
                   <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
                     <div className="text-center text-gray-500">
-                      <svg className="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.464 0L4.35 16.5c-.77.833.192 2.5 1.732 2.5z" />
-                      </svg>
+                      <Package className="w-12 h-12 mx-auto mb-2" />
                       <p className="text-sm">Image not available</p>
                     </div>
                   </div>
                 )}
               </div>
               
-              {/* Reviews Badge */}
-              <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm px-4 py-3 rounded-xl shadow-lg border border-gray-200">
-                <div className="flex items-center gap-1">
-                  <span className="text-sm font-medium text-gray-700">0</span>
-                  <svg className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  <span className="text-sm text-gray-600">0 Reviews</span>
-                </div>
+              {/* Badges */}
+              <div className="absolute top-4 left-4 flex flex-col gap-2">
+                <Badge className="bg-teal-500 text-white">
+                  <Shield className="w-3 h-3 mr-1" />
+                  Certified
+                </Badge>
               </div>
-            </div>
+              
+              {/* Reviews Badge */}
+              <div className="absolute bottom-4 left-4">
+                <Badge variant="secondary" className="bg-white/95 backdrop-blur-sm shadow-md">
+                  <Star className="w-3 h-3 mr-1 fill-yellow-400 text-yellow-400" />
+                  <span className="font-semibold">0</span>
+                  <span className="ml-1 text-gray-600">Reviews</span>
+                </Badge>
+              </div>
+            </motion.div>
             
             {/* Thumbnail Images */}
             <div className="flex justify-center">
@@ -313,12 +338,26 @@ const ProductView = () => {
           </div>
 
           {/* Product Details */}
-          <div className="space-y-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-6"
+          >
             <div>
-              <div className="flex items-center justify-between mb-2">
-                <h1 className="text-3xl font-bold text-gray-900">{product.name}</h1>
-                <div className="flex items-center gap-4">
-                  <button
+              <div className="flex items-start justify-between mb-3">
+                <div className="flex-1">
+                  <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
+                  <div className="flex items-center gap-2 text-sm text-gray-600">
+                    <Badge variant="outline">{product.category}</Badge>
+                    <span className="text-gray-400">•</span>
+                    <span>ID: {product.id}</span>
+                  </div>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Button
+                    variant="ghost"
+                    size="icon"
                     onClick={async () => {
                       const shareData = {
                         title: product.name,
@@ -330,7 +369,6 @@ const ProductView = () => {
                         if (navigator.share) {
                           await navigator.share(shareData);
                         } else {
-                          // Fallback: copy to clipboard
                           await navigator.clipboard.writeText(window.location.href);
                           toast.success("Link copied to clipboard!", {
                             duration: 3000,
@@ -338,7 +376,6 @@ const ProductView = () => {
                           });
                         }
                       } catch (error) {
-                        // Fallback: copy to clipboard
                         try {
                           await navigator.clipboard.writeText(window.location.href);
                           toast.success("Link copied to clipboard!", {
@@ -353,12 +390,13 @@ const ProductView = () => {
                         }
                       }
                     }}
-                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-all duration-300 hover:scale-110"
                     aria-label="Share product"
                   >
-                    <Share2 size={20} />
-                  </button>
-                  <button
+                    <Share2 className="h-5 w-5" />
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="icon"
                     onClick={() => {
                       const isWishlisted = wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price);
                       if (!isWishlisted) {
@@ -375,43 +413,32 @@ const ProductView = () => {
                         });
                       }
                     }}
-                    className={`cursor-pointer transition-all duration-300 hover:scale-110 ${
-                      wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) 
-                        ? 'text-red-600' 
-                        : 'text-gray-400 hover:text-red-500'
-                    }`}
+                    className={wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'text-red-600 hover:text-red-700' : ''}
                     aria-label="Toggle wishlist"
                   >
                     <Heart 
-                      size={24} 
+                      className="h-5 w-5"
                       fill={wishlist.some((p) => p.image === product.image && p.category === product.category && p.price === product.price) ? 'currentColor' : 'none'}
                     />
-                  </button>
-                  <button
-                    onClick={() => {
-                      toast.success("Added to cart", {
-                        duration: 3000,
-                        position: "bottom-right",
-                      });
-                    }}
-                    className="text-gray-400 hover:text-teal-600 cursor-pointer transition-all duration-300 hover:scale-110"
-                    aria-label="Add to cart"
-                  >
-                    <ShoppingCart size={20} />
-                  </button>
+                  </Button>
                 </div>
               </div>
-              <p className="text-base text-gray-600">{product.category} - Premium Diamond Jewelry</p>
-              <p className="text-sm text-gray-500 mt-1">Product ID: {product.id}</p>
             </div>
 
             {/* Price */}
-            <div className="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-100 rounded-2xl p-6">
-              <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
-                <span className="ml-2 text-sm text-gray-500">Inclusive of all taxes</span>
+            <div className="bg-gradient-to-r from-teal-50 to-emerald-50 border border-teal-200 rounded-xl p-6">
+              <div className="flex items-baseline justify-between">
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-gray-900">{formatPrice(product.price)}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">Inclusive of all taxes</p>
+                </div>
+                <Badge className="bg-green-500 text-white">
+                  <Truck className="w-3 h-3 mr-1" />
+                  Free Delivery
+                </Badge>
               </div>
-              <p className="text-sm text-green-600 mt-1">Free delivery</p>
             </div>
 
             {/* Color Selection */}
@@ -477,33 +504,36 @@ const ProductView = () => {
 
               {/* Desktop Action Buttons - Hidden on mobile */}
             <div className="hidden lg:block space-y-4 pt-4">
-              <div className="flex flex-wrap items-center gap-4">
-                <button
+              <div className="grid grid-cols-2 gap-3">
+                <Button
                   onClick={() => setShowVideoModal(true)}
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-6 py-3 rounded-xl hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
-                  aria-label="Request video call"
+                  className="bg-teal-600 hover:bg-teal-700"
+                  size="lg"
                 >
-                  <Video className="h-6 w-6 group-hover:animate-pulse" />
-                  <span className="font-semibold text-base">Request Video Call</span>
-                </button>
-                <button
+                  <Video className="h-5 w-5 mr-2" />
+                  Video Call
+                </Button>
+                <Button
                   onClick={() => setShowTrialModal(true)}
-                  className="group inline-flex items-center gap-3 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-3 rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
-                  aria-label="Request trial at home"
+                  className="bg-purple-600 hover:bg-purple-700"
+                  size="lg"
                 >
-                  <Home className="h-6 w-6 group-hover:animate-pulse" />
-                  <span className="font-semibold text-base">Trial At Home</span>
-                </button>
-                <DeliveryCheckDialog />
+                  <Home className="h-5 w-5 mr-2" />
+                  Trial Home
+                </Button>
               </div>
               
+              <DeliveryCheckDialog />
+              
               {/* Buy Now Button */}
-              <button 
+              <Button 
                 onClick={() => setShowForm(true)}
-                className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-4 px-6 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
+                className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700"
+                size="lg"
               >
+                <ShoppingCart className="h-5 w-5 mr-2" />
                 Buy Now
-              </button>
+              </Button>
             </div>
 
 
@@ -611,7 +641,7 @@ const ProductView = () => {
                 <p>• Secure packaging with insurance</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
 
         {/* Product Description */}
@@ -869,36 +899,38 @@ const ProductView = () => {
       )}
 
       {/* Fixed Mobile Action Bar - Always visible at bottom on mobile */}
-      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t border-gray-200 shadow-2xl z-40">
+      <div className="fixed bottom-0 left-0 right-0 lg:hidden bg-white border-t shadow-lg z-40">
         <div className="max-w-7xl mx-auto px-4 py-3 space-y-2">
           {/* Top Row - Video Call and Trial Home buttons */}
           <div className="grid grid-cols-3 gap-2">
-            <button
+            <Button
               onClick={() => setShowVideoModal(true)}
-              className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-teal-500 to-teal-600 text-white px-3 py-2.5 rounded-lg hover:from-teal-600 hover:to-teal-700 transition-all duration-300 shadow-md hover:shadow-lg transform active:scale-95 cursor-pointer"
-              aria-label="Request video call"
+              className="bg-teal-600 hover:bg-teal-700 h-10"
+              size="sm"
             >
-              <Video className="h-4 w-4" />
-              <span className="font-semibold text-xs">Video</span>
-            </button>
-            <button
+              <Video className="h-4 w-4 mr-1" />
+              <span className="text-xs">Video</span>
+            </Button>
+            <Button
               onClick={() => setShowTrialModal(true)}
-              className="group inline-flex items-center justify-center gap-1.5 bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-2.5 rounded-lg hover:from-purple-600 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg transform active:scale-95 cursor-pointer"
-              aria-label="Request trial at home"
+              className="bg-purple-600 hover:bg-purple-700 h-10"
+              size="sm"
             >
-              <Home className="h-4 w-4" />
-              <span className="font-semibold text-xs">Trial</span>
-            </button>
+              <Home className="h-4 w-4 mr-1" />
+              <span className="text-xs">Trial</span>
+            </Button>
             <DeliveryCheckDialog compact={true} />
           </div>
           
           {/* Buy Now Button */}
-          <button 
+          <Button 
             onClick={() => setShowForm(true)}
-            className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 text-white py-3 px-6 rounded-lg font-bold text-base hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-95 cursor-pointer"
+            className="w-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700"
+            size="lg"
           >
+            <ShoppingCart className="h-5 w-5 mr-2" />
             Buy Now
-          </button>
+          </Button>
         </div>
       </div>
       </div>

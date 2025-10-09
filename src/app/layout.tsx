@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Allura, Dancing_Script } from "next/font/google";
 import "./globals.css";
 import { WishlistProvider } from "./components/WishlistContext";
 import { Toaster } from "@/components/ui/sonner";
@@ -12,6 +12,18 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const allura = Allura({
+  weight: "400",
+  variable: "--font-allura",
+  subsets: ["latin"],
+});
+
+const dancingScript = Dancing_Script({
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-dancing-script",
   subsets: ["latin"],
 });
 
@@ -33,7 +45,7 @@ export default function RootLayout({
     <html lang="en">
    
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${allura.variable} ${dancingScript.variable} antialiased`}
       >
         <WishlistProvider>
           {children}

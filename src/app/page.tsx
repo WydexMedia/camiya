@@ -1,10 +1,16 @@
 import Header from "./components/Header";
 import NavCategories from "./components/NavCategories";
-import HeroSection from "./components/HeroSection";
+import ModernHero from "./components/ModernHero";
 import FeaturesSection from "./components/FeaturesSection";
-import ShopOnBudget from "./components/ShopOnBudget";
+import CategoryGallery from "./components/CategoryGallery";
+import BrandStory from "./components/BrandStory";
 import NewArrivals from "./components/NewArrivals";
+import VideoShowcase from "./components/VideoShowcase";
+import CTABanner from "./components/CTABanner";
 import TopDemanded from "./components/TopDemanded";
+import LuxuryExperience from "./components/LuxuryExperience";
+import Testimonials from "./components/Testimonials";
+import InstagramFeed from "./components/InstagramFeed";
 import Footer from "./components/Footer";
 
 export default function Home() {
@@ -12,11 +18,17 @@ export default function Home() {
     <div className="font-sans bg-white text-gray-800">
       <Header />
       <NavCategories />
-      <HeroSection />
+      <ModernHero />
       <FeaturesSection />
-      <ShopOnBudget />
+      <CategoryGallery />
+      <BrandStory />
       <NewArrivals />
+      <VideoShowcase />
       <TopDemanded />
+      <CTABanner />
+      <LuxuryExperience />
+      <Testimonials />
+      <InstagramFeed />
       <Footer />
     </div>
   );
