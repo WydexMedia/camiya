@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import NavCategories from "./components/NavCategories";
 import ModernHero from "./components/ModernHero";
+import MobileCategoryGallery from "./components/MobileCategoryGallery";
 import FeaturesSection from "./components/FeaturesSection";
 import CategoryGallery from "./components/CategoryGallery";
 import BrandStory from "./components/BrandStory";
@@ -19,6 +20,7 @@ export default function Home() {
       <Header />
       <NavCategories />
       <ModernHero />
+      <MobileCategoryGallery />
       <FeaturesSection />
       <CategoryGallery />
       <BrandStory />
