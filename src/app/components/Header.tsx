@@ -14,27 +14,8 @@ const Header = () => {
 
   return (
     <>
-      {/* Top bar with contact info */}
-      <div className="bg-gradient-to-r from-teal-800 to-emerald-800 text-white py-2 px-6 hidden lg:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center space-x-6">
-            <div className="flex items-center space-x-2">
-              <Phone size={14} />
-              <span>1800 257 8600</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Mail size={14} />
-              <span>camiya@gmail.com</span>
-            </div>
-          </div>
-          <div className="text-xs">
-            <span>Premium Diamond Jewelry | Free Shipping on Orders Above ₹50,000</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main header */}
-      <header className="bg-gradient-to-r from-teal-800 to-emerald-800 shadow-lg sticky top-0 z-50">
+      <header className="shadow-lg sticky top-0 z-50" style={{ backgroundColor: '#023039' }}>
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
             {/* Logo */}
@@ -58,7 +39,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center space-x-8">
               <Link 
                 href="/category/wishlist" 
-                className="flex items-center space-x-2 text-white hover:text-teal-100 transition-colors duration-300 relative group"
+                className="flex items-center space-x-2 text-white hover:text-teal-300 transition-colors duration-300 relative group"
               >
                 <div className="relative">
                   <Heart size={20} className="group-hover:scale-110 transition-transform duration-300" />
@@ -73,7 +54,7 @@ const Header = () => {
               
               <Link 
                 href="/contact" 
-                className="bg-white text-teal-800 px-6 py-2.5 rounded-full font-medium hover:bg-teal-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                className="bg-white text-teal-800 px-6 py-2.5 rounded-full font-medium hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
               >
                 Contact Us
               </Link>
@@ -83,7 +64,7 @@ const Header = () => {
             <div className="flex lg:hidden items-center space-x-4">
               <Link 
                 href="/category/wishlist" 
-                className="flex items-center text-white hover:text-teal-100 transition-colors duration-300 relative"
+                className="flex items-center text-white hover:text-teal-300 transition-colors duration-300 relative"
               >
                 <div className="relative">
                   <Heart size={20} />
@@ -97,7 +78,7 @@ const Header = () => {
               
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="text-white hover:text-teal-100 transition-colors duration-300"
+                className="text-white hover:text-teal-300 transition-colors duration-300"
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>

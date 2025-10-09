@@ -3809,45 +3809,7 @@
       "gold"
     ]
   },
-  {
-    "id": "CD07062",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07062_earrings_gold.png",
-    "price": 77400,
-    "weight": "7.28g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD07080",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07080_earrings_rose.png",
-    "price": 77700,
-    "weight": "7.31g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
-    "id": "CD07104",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07104_earrings_gold.png",
-    "price": 78000,
-    "weight": "7.34g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
+
   {
     "id": "CD07164",
     "category": "Bangles",
@@ -6939,20 +6901,7 @@
     ],
     "diamondWeight": "0.01 CT"
   },
-  {
-    "id": "CD08990",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD08990_ring_gold.png",
-    "price": 62700,
-    "weight": "5.81g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
+
   {
     "id": "CD08991",
     "category": "Rings",
