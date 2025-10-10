@@ -21,12 +21,12 @@ const MobileCategoryGallery = () => {
     },
     {
       name: "Bracelets",
-      image: "/images/shop_on_budimg/shop2.jpg",
+      image: "/images/shop_on_budimg/bracelet.jpeg",
       bgColor: "bg-blue-100"
     },
     {
       name: "Pendants",
-      image: "/images/shop_on_budimg/shop3.jpg",
+      image: "/images/shop_on_budimg/pendent.jpeg",
       bgColor: "bg-indigo-100"
     },
     {
@@ -49,9 +49,9 @@ const MobileCategoryGallery = () => {
               <Image
                 src={category.image}
                 alt={category.name}
-                width={60}
-                height={60}
-                className="object-cover w-14 h-14 rounded-full"
+                width={80}
+                height={80}
+                className="object-cover w-20 h-20 rounded-full scale-125"
               />
             </div>
             <span className="text-xs font-semibold text-gray-800 uppercase tracking-wide text-center">
