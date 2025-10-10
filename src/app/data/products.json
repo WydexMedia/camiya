@@ -1122,19 +1122,6 @@
     "diamondWeight": "0.04 CT"
   },
   {
-    "id": "UNT333",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/untitled.333_earrings_gold.png",
-    "price": 16600,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD08800",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -1176,19 +1163,6 @@
       "gold"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD08803",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08803_earrings_gold.png",
-    "price": 20700,
-    "weight": "1.61g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD08804",
@@ -1263,33 +1237,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD08809",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08809_earrings_rose.png",
-    "price": 22500,
-    "weight": "1.79g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08811",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08811_earrings_gold.png",
-    "price": 22800,
-    "weight": "1.82g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD08812",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -1302,19 +1249,6 @@
       "gold"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD08814",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08814_earrings_gold.png",
-    "price": 23400,
-    "weight": "1.88g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD08815",
@@ -1418,20 +1352,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD08823",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08823_earrings_gold.png",
-    "price": 25800,
-    "weight": "2.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD08824",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -1502,32 +1422,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD08833",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08833_earrings_rose.png",
-    "price": 27600,
-    "weight": "2.30g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08835",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08835_earrings_gold.png",
-    "price": 27900,
-    "weight": "2.33g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD08836",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -1555,32 +1449,6 @@
       "rose"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD08839",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08839_earrings_gold.png",
-    "price": 28800,
-    "weight": "2.42g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD08840",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08840_earrings_gold.png",
-    "price": 29100,
-    "weight": "2.45g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD08841",
@@ -1628,20 +1496,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD08844",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08844_earrings_gold.png",
-    "price": 30300,
-    "weight": "2.57g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD08845",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -1683,20 +1537,6 @@
       "rose"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD08848",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD08848_earrings_gold.png",
-    "price": 31500,
-    "weight": "2.69g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
   },
   {
     "id": "CD08849",
@@ -2252,19 +2092,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD09629",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD09629_earrings_rose.png",
-    "price": 43500,
-    "weight": "3.89g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
     "id": "CD09631",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -2665,20 +2492,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD09666",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD09666_earrings_gold.png",
-    "price": 52200,
-    "weight": "4.76g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD09667",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -2837,32 +2650,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "UNT690",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/untitled.690_earrings_rose.png",
-    "price": 55800,
-    "weight": "5.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
-    "id": "UNT769",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/untitled.769_earrings_rose.png",
-    "price": 56100,
-    "weight": "5.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
     "id": "CD06830",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -2875,32 +2662,6 @@
       "gold"
     ],
     "diamondWeight": "0.03 CT"
-  },
-  {
-    "id": "CD06837",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06837_earrings_gold.png",
-    "price": 56700,
-    "weight": "5.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06838",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06838_earrings_rose.png",
-    "price": 57000,
-    "weight": "5.24g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
   },
   {
     "id": "CD06846",
@@ -2917,46 +2678,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06851",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06851_earrings_gold.png",
-    "price": 57600,
-    "weight": "5.30g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06852",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06852_earrings_gold.png",
-    "price": 57900,
-    "weight": "5.33g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06859",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06859_earrings_gold.png",
-    "price": 58200,
-    "weight": "5.36g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD06861",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -2969,58 +2690,6 @@
       "gold"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD06863",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06863_earrings_gold.png",
-    "price": 58800,
-    "weight": "5.42g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06864",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06864_earrings_gold.png",
-    "price": 59100,
-    "weight": "5.45g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06869",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06869_earrings_gold.png",
-    "price": 59400,
-    "weight": "5.48g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06873",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06873_earrings_gold.png",
-    "price": 59700,
-    "weight": "5.51g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD06876",
@@ -3037,33 +2706,6 @@
     "diamondWeight": "0.04 CT"
   },
   {
-    "id": "CD06879",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06879_earrings_gold.png",
-    "price": 60300,
-    "weight": "5.57g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06885",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06885_earrings_gold.png",
-    "price": 60600,
-    "weight": "5.60g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD06889",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3078,60 +2720,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06891",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06891_earrings_gold.png",
-    "price": 61200,
-    "weight": "5.66g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06893",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06893_earrings_gold.png",
-    "price": 61500,
-    "weight": "5.69g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06897",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06897_earrings_gold.png",
-    "price": 61800,
-    "weight": "5.72g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06902",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06902_earrings_gold.png",
-    "price": 62100,
-    "weight": "5.75g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD06905",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3144,19 +2732,6 @@
       "gold"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD06906",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06906_earrings_gold.png",
-    "price": 62700,
-    "weight": "5.81g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD06908",
@@ -3202,19 +2777,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06917",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06917_earrings_gold.png",
-    "price": 63900,
-    "weight": "5.93g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06918",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3243,19 +2805,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06923",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06923_earrings_gold.png",
-    "price": 64800,
-    "weight": "6.02g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06925",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3269,72 +2818,6 @@
       "rose"
     ],
     "diamondWeight": "0.03 CT"
-  },
-  {
-    "id": "CD06927",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06927_earrings_gold.png",
-    "price": 65400,
-    "weight": "6.08g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06928",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06928_earrings_gold.png",
-    "price": 65700,
-    "weight": "6.11g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06930",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06930_earrings_gold.png",
-    "price": 66000,
-    "weight": "6.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06932",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06932_earrings_gold.png",
-    "price": 66300,
-    "weight": "6.17g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06934",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06934_earrings_rose.png",
-    "price": 66600,
-    "weight": "6.20g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
   },
   {
     "id": "CD06937",
@@ -3379,32 +2862,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD06943",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06943_earrings_gold.png",
-    "price": 67800,
-    "weight": "6.32g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06944",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06944_earrings_gold.png",
-    "price": 68100,
-    "weight": "6.35g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06946",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3447,45 +2904,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06954",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06954_earrings_gold.png",
-    "price": 69300,
-    "weight": "6.47g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06956",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06956_earrings_gold.png",
-    "price": 69600,
-    "weight": "6.50g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06958",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06958_earrings_gold.png",
-    "price": 69900,
-    "weight": "6.53g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06960",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3498,19 +2916,6 @@
       "rose"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD06967",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06967_earrings_gold.png",
-    "price": 70500,
-    "weight": "6.59g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD06968",
@@ -3526,19 +2931,6 @@
       "rose"
     ],
     "diamondWeight": "0.02 CT"
-  },
-  {
-    "id": "CD06970",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06970_earrings_gold.png",
-    "price": 71100,
-    "weight": "6.65g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
   },
   {
     "id": "CD06973",
@@ -3569,19 +2961,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06976",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06976_earrings_gold.png",
-    "price": 72000,
-    "weight": "6.74g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06978",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3610,71 +2989,6 @@
     "diamondWeight": "0.02 CT"
   },
   {
-    "id": "CD06982",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06982_earrings_gold.png",
-    "price": 72900,
-    "weight": "6.83g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06985",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06985_earrings_gold.png",
-    "price": 73200,
-    "weight": "6.86g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06987",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06987_earrings_gold.png",
-    "price": 73500,
-    "weight": "6.89g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06989",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06989_earrings_gold.png",
-    "price": 73800,
-    "weight": "6.92g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06990",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06990_earrings_gold.png",
-    "price": 74100,
-    "weight": "6.95g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD06992",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3689,45 +3003,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD06995",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06995_earrings_gold.png",
-    "price": 74700,
-    "weight": "7.01g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06996",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06996_earrings_gold.png",
-    "price": 75000,
-    "weight": "7.04g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD06999",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD06999_earrings_rose.png",
-    "price": 75300,
-    "weight": "7.07g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
     "id": "CD07001",
     "category": "Earrings",
     "name": "Diamond Earrings",
@@ -3740,33 +3015,6 @@
       "gold"
     ],
     "diamondWeight": "0.06 CT"
-  },
-  {
-    "id": "CD07002",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07002_earrings_gold.png",
-    "price": 75900,
-    "weight": "7.13g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "CD07005",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07005_earrings_gold.png",
-    "price": 76200,
-    "weight": "7.16g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
   },
   {
     "id": "CD07007",
@@ -3796,20 +3044,6 @@
     ],
     "diamondWeight": "0.04 CT"
   },
-  {
-    "id": "CD07010",
-    "category": "Earrings",
-    "name": "Diamond Earrings",
-    "image": "/images/studs/CD07010_earrings_gold.png",
-    "price": 77100,
-    "weight": "7.25g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-
   {
     "id": "CD07164",
     "category": "Bangles",
@@ -3950,7 +3184,7 @@
     "name": "Diamond Chain",
     "image": "/images/chain/CD09443_chain_gold.png",
     "price": 32300,
-    "weight": "2.43g",
+    "weight": "2.63g",
     "purity": "18K Gold",
     "stones": "Diamond",
     "colors": [
@@ -4557,118 +3791,6 @@
       "rose"
     ],
     "diamondWeight": "0.03 CT"
-  },
-  {
-    "id": "CD07993",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD07993_chain_gold.png",
-    "price": 41500,
-    "weight": "3.65g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD07995",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD07995_chain_gold.png",
-    "price": 43200,
-    "weight": "3.78g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD07996",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD07996_chain_gold.png",
-    "price": 42800,
-    "weight": "3.72g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08000",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD08000_chain_gold.png",
-    "price": 43500,
-    "weight": "3.81g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08006",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD08006_chain_gold.png",
-    "price": 43800,
-    "weight": "3.84g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08007",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD08007_chain_gold.png",
-    "price": 44100,
-    "weight": "3.87g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08008",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD08008_chain_gold.png",
-    "price": 44400,
-    "weight": "3.90g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD08010",
-    "category": "Pendant Chain",
-    "name": "Diamond Chain",
-    "image": "/images/chain/CD08010_chain_gold.png",
-    "price": 44700,
-    "weight": "3.93g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
   },
   {
     "id": "CD17676",
@@ -5321,32 +4443,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "UNT631",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/untitled.631_ring_rose.png",
-    "price": 14700,
-    "weight": "1.03g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
-  },
-  {
-    "id": "UNT632",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/untitled.632_ring_gold.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
     "id": "CD05407",
     "category": "Rings",
     "name": "Diamond Ring",
@@ -5375,146 +4471,6 @@
       "rose"
     ],
     "diamondWeight": "0.01 CT"
-  },
-  {
-    "id": "CD06442",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06442_ring_gold.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06442",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06442_ring_rose.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06600",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06600_ring_gold.png",
-    "price": 14900,
-    "weight": "1.05g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06600",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06600_ring_rose.png",
-    "price": 14900,
-    "weight": "1.05g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06603",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06603_ring_gold.png",
-    "price": 16700,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06603",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06603_ring_rose.png",
-    "price": 16700,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06605",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06605_ring_gold.png",
-    "price": 15400,
-    "weight": "1.09g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06605",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06605_ring_rose.png",
-    "price": 15400,
-    "weight": "1.09g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06608",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06608_ring_gold.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06608",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06608_ring_rose.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
   },
   {
     "id": "CD06612",
@@ -5547,62 +4503,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD06613",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06613_ring_gold.png",
-    "price": 17500,
-    "weight": "1.31g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06613",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06613_ring_rose.png",
-    "price": 17500,
-    "weight": "1.31g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06616",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06616_ring_gold.png",
-    "price": 15200,
-    "weight": "1.07g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06616",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06616_ring_rose.png",
-    "price": 15200,
-    "weight": "1.07g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD06628",
     "category": "Rings",
     "name": "Diamond Ring",
@@ -5631,342 +4531,6 @@
       "rose"
     ],
     "diamondWeight": "0.01 CT"
-  },
-  {
-    "id": "CD06631",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06631_ring_gold.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06631",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06631_ring_rose.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06632",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06632_ring_gold.png",
-    "price": 15700,
-    "weight": "1.13g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06632",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06632_ring_rose.png",
-    "price": 15700,
-    "weight": "1.13g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06635",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06635_ring_gold.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06635",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06635_ring_rose.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06639",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06639_ring_gold.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06639",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06639_ring_rose.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06649",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06649_ring_gold.png",
-    "price": 16600,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06649",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06649_ring_rose.png",
-    "price": 16600,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06664",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06664_ring_gold.png",
-    "price": 15300,
-    "weight": "1.08g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06664",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06664_ring_rose.png",
-    "price": 15300,
-    "weight": "1.08g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06665",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06665_ring_gold.png",
-    "price": 17100,
-    "weight": "1.26g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06665",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06665_ring_rose.png",
-    "price": 17100,
-    "weight": "1.26g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06668",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06668_ring_gold.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06668",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06668_ring_rose.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06674",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06674_ring_gold.png",
-    "price": 15500,
-    "weight": "1.11g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06674",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06674_ring_rose.png",
-    "price": 15500,
-    "weight": "1.11g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06678",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06678_ring_gold.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06678",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06678_ring_rose.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06679",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06679_ring_gold.png",
-    "price": 15600,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06679",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06679_ring_rose.png",
-    "price": 15600,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06681",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06681_ring_gold.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06681",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06681_ring_rose.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
   },
   {
     "id": "CD06687",
@@ -5999,398 +4563,6 @@
     "diamondWeight": "0.01 CT"
   },
   {
-    "id": "CD06689",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06689_ring_gold.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06689",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06689_ring_rose.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06691",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06691_ring_gold.png",
-    "price": 16500,
-    "weight": "1.17g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06691",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06691_ring_gold_1.png",
-    "price": 16500,
-    "weight": "1.17g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06694",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06694_ring_gold.png",
-    "price": 16100,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06694",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06694_ring_rose.png",
-    "price": 16100,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06700",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06700_ring_gold.png",
-    "price": 15800,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06700",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06700_ring_rose.png",
-    "price": 15800,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06708",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06708_ring_gold.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06708",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06708_ring_rose.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06735",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06735_ring_gold.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06735",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06735_ring_rose.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06738",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06738_ring_gold.png",
-    "price": 16600,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06738",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06738_ring_rose.png",
-    "price": 16600,
-    "weight": "1.18g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06743",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06743_ring_gold.png",
-    "price": 15300,
-    "weight": "1.08g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06743",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06743_ring_rose.png",
-    "price": 15300,
-    "weight": "1.08g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06749",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06749_ring_gold.png",
-    "price": 17100,
-    "weight": "1.26g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06749",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06749_ring_rose.png",
-    "price": 17100,
-    "weight": "1.26g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06776",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06776_ring_gold.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06776",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06776_ring_rose.png",
-    "price": 16800,
-    "weight": "1.22g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06777",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06777_ring_gold.png",
-    "price": 15500,
-    "weight": "1.11g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06777",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06777_ring_rose.png",
-    "price": 15500,
-    "weight": "1.11g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06781",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06781_ring_gold.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06781",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06781_ring_rose.png",
-    "price": 16200,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06789",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06789_ring_gold.png",
-    "price": 15600,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06789",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06789_ring_rose.png",
-    "price": 15600,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06792",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06792_ring_gold.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06792",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06792_ring_rose.png",
-    "price": 15900,
-    "weight": "1.14g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
     "id": "CD06806",
     "category": "Rings",
     "name": "Diamond Ring",
@@ -6419,172 +4591,6 @@
       "rose"
     ],
     "diamondWeight": "0.01 CT"
-  },
-  {
-    "id": "CD06812",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06812_ring_gold.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06812",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06812_ring_rose.png",
-    "price": 16300,
-    "weight": "1.19g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06814",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06814_ring_gold.png",
-    "price": 16500,
-    "weight": "1.17g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06814",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06814_ring_rose.png",
-    "price": 16500,
-    "weight": "1.17g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06817",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06817_ring_gold.png",
-    "price": 16100,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06817",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06817_ring_rose.png",
-    "price": 16100,
-    "weight": "1.15g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06818",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06818_ring_gold.png",
-    "price": 15800,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06818",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06818_ring_rose.png",
-    "price": 15800,
-    "weight": "1.12g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06822",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06822_ring_gold.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "CD06822",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/CD06822_ring_rose.png",
-    "price": 16400,
-    "weight": "1.21g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold",
-      "rose"
-    ]
-  },
-  {
-    "id": "UNT196",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/untitled.196_ring_gold.png",
-    "price": 14700,
-    "weight": "1.03g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "gold"
-    ]
-  },
-  {
-    "id": "UNT197",
-    "category": "Rings",
-    "name": "Diamond Ring",
-    "image": "/images/ring/untitled.197_ring_rose.png",
-    "price": 14700,
-    "weight": "1.03g",
-    "purity": "18K Gold",
-    "stones": "Diamond",
-    "colors": [
-      "rose"
-    ]
   },
   {
     "id": "CD08964",
@@ -6901,7 +4907,6 @@
     ],
     "diamondWeight": "0.01 CT"
   },
-
   {
     "id": "CD08991",
     "category": "Rings",

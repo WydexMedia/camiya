@@ -248,7 +248,7 @@ export default function CategoryPage() {
               </div>
               
               {/* Product Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
                 {filteredProducts.map((product, idx) => {
                   // Find the actual index in the original products array
                   const actualIndex = products.findIndex(p => 

@@ -94,14 +94,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onBuyNow, productInd
       className="text-center bg-white rounded shadow border border-gray-200 flex flex-col p-3 sm:p-4 relative cursor-pointer hover:shadow-lg transition-shadow duration-300"
       onClick={handleCardClick}
     >
-      <div className="bg-gray-100 p-4 sm:p-6 relative rounded">
+      <div className="bg-gray-100 p-4 sm:p-6 relative rounded overflow-hidden">
         <Image
           src={product.image}
           alt={product.category}
           width={400}
-          height={300}
-          sizes="(min-width: 768px) 25vw, 50vw"
-          className="w-full h-40 sm:h-48 object-contain mx-auto"
+          height={400}
+          sizes="(min-width: 768px) 33vw, 50vw"
+          className="w-full h-48 sm:h-56 md:h-64 object-contain mx-auto scale-135 sm:scale-100"
         />
         <button
           type="button"
