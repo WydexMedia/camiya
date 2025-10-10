@@ -40,7 +40,7 @@ const ModernHero = () => {
               {/* CTA Button */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
-                  href="/category/ring"
+                  href="/category/Rings"
                   className="group inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-teal-600 to-emerald-600 text-white font-semibold rounded-full hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                 >
                   Explore Collections
