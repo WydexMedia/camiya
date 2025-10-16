@@ -30,12 +30,55 @@ const dancingScript = Dancing_Script({
 export const metadata: Metadata = {
   title: "Camiya Diamonds",
   description: "Camiya Diamonds is a leading diamond jewellery brand in India, offering a wide range of diamond jewelry for men and women.",
+  keywords: "diamond jewelry, natural diamonds, luxury jewelry, diamond rings, diamond earrings, diamond necklaces, diamond bracelets, Camiya Diamonds, India jewelry",
+  authors: [{ name: "Camiya Diamonds" }],
+  creator: "Camiya Diamonds",
+  publisher: "Camiya Diamonds",
   icons: {
-    icon: 
-    '/favicon.ico'
+    icon: '/favicon.ico'
   },
   verification: {
     google: "SfKGiAV2-I-iWD9Vp8RpW4Vq4jP5NFJq6ONr-90etn0"
+  },
+  openGraph: {
+    title: "Camiya Diamonds - Natural Diamond Jewelry",
+    description: "Discover our exquisite collection of handcrafted diamond jewelry, where every piece tells a story of luxury and authenticity.",
+    url: "https://camiyadiamonds.com",
+    siteName: "Camiya Diamonds",
+    images: [
+      {
+        url: "/images/camiya-logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Camiya Diamonds - Natural Diamond Jewelry",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Camiya Diamonds - Natural Diamond Jewelry",
+    description: "Discover our exquisite collection of handcrafted diamond jewelry, where every piece tells a story of luxury and authenticity.",
+    images: ["/images/camiya-logo.png"],
+    creator: "@camiyadiamonds",
+    site: "@camiyadiamonds",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  other: {
+    'facebook:app_id': 'https://www.facebook.com/camiyadiamonds/',
+    'instagram:username': 'https://www.instagram.com/camiya.diamonds/',
+    'pinterest:username': 'camiyadiamonds',
   },
 };
 

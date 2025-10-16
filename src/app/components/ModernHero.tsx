@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 const ModernHero = () => {
   return (
-    <section className="relative min-h-screen overflow-hidden" style={{ backgroundColor: '#030305' }}>
+    <section className="relative min-h-screen overflow-hidden" style={{ backgroundColor: '#FFFFFF' }}>
 
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
@@ -26,13 +26,13 @@ const ModernHero = () => {
               </div>
               
               {/* Main Heading */}
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-white mb-4 leading-tight">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-light text-black mb-4 leading-tight">
                 <span className="block font-script text-4xl md:text-6xl lg:text-7xl mb-1">Realness redefined </span>
                 <span className="block font-script text-4xl md:text-6xl lg:text-7xl"> like you</span>
               </h1>
               
               {/* Description */}
-              <p className="text-base md:text-lg text-gray-300 mb-3 leading-relaxed max-w-lg">
+              <p className="text-base md:text-lg text-gray-700 mb-3 leading-relaxed max-w-lg">
                 Discover our exquisite collection of handcrafted diamond jewelry, 
                 where every piece tells a story of luxury and authenticity.
               </p>
@@ -51,7 +51,7 @@ const ModernHero = () => {
                 
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-gray-400 text-white font-semibold rounded-full hover:border-teal-600 hover:text-teal-600 transition-all duration-300"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-transparent border-2 border-gray-400 text-black font-semibold rounded-full hover:border-teal-600 hover:text-teal-600 transition-all duration-300"
                 >
                   Book Consultation
                 </Link>
@@ -70,7 +70,7 @@ const ModernHero = () => {
               {/* Main Image Container */}
               <div className="relative h-[350px] md:h-[450px] lg:h-[550px]">
                 <Image
-                  src="/images/hero/model.jpg"
+                  src="/images/hero/camiyahero.png"
                   alt="Diamond Jewelry"
                   fill
                   className="object-contain"
