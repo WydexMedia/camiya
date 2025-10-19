@@ -55,15 +55,15 @@ const Header = () => {
         {/* Main navigation */}
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center gap-6">
-            {/* Logo */}
-            <Link href="/" className="flex items-center group">
+            {/* Logo - Hidden on mobile, shown on desktop */}
+            <Link href="/" className="hidden lg:flex items-center group lg:flex-none">
               <div className="relative">
                 <Image 
-                  className="w-14 h-14 transition-transform duration-300 group-hover:scale-110" 
-                  src="/images/camiyatrans.png" 
+                  className="w-20 h-20 transition-transform duration-300 group-hover:scale-110" 
+                  src="/images/logo/camiya_white.png" 
                   alt="Camiya Diamonds" 
-                  width={56} 
-                  height={56} 
+                  width={80} 
+                  height={80} 
                 />
                 <div className="absolute inset-0 bg-teal-300/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
@@ -110,7 +110,8 @@ const Header = () => {
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex lg:hidden items-center space-x-4">
+            <div className="flex lg:hidden items-center justify-between w-full">
+              {/* Left side - Wishlist */}
               <Link 
                 href="/category/wishlist" 
                 className="flex items-center text-white hover:text-teal-300 transition-colors duration-300 relative p-2"
@@ -125,6 +126,21 @@ const Header = () => {
                 </div>
               </Link>
               
+              {/* Center - Logo */}
+              <Link href="/" className="flex items-center group">
+                <div className="relative">
+                  <Image 
+                    className="w-28 h-28 transition-transform duration-300 group-hover:scale-110" 
+                    src="/images/logo/camiya_white.png" 
+                    alt="Camiya Diamonds" 
+                    width={112} 
+                    height={112} 
+                  />
+                  <div className="absolute inset-0 bg-teal-300/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+              </Link>
+              
+              {/* Right side - Menu button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="text-white hover:text-teal-300 transition-colors duration-300 p-2 hover:bg-white/5 rounded-lg"
