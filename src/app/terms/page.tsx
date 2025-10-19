@@ -48,7 +48,7 @@ export default function TermsPage() {
 
           <section>
             <h2 className="text-xl font-semibold text-gray-900 mb-2">7. Contact</h2>
-            <p className="text-gray-700">For any questions regarding these Terms, contact us at camiya@gmail.com or Toll Free: 1800 257 8600.</p>
+            <p className="text-gray-700">For any questions regarding these Terms, contact us at camiya@gmail.com or Toll Free: 98953 31916.</p>
           </section>
         </div>
       </div>

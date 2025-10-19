@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-semibold text-gray-900 mb-2">9. Contact Us</h2>
             <p className="text-gray-700">
               For questions about this Privacy Policy, contact us at camiya@gmail.com or Toll Free:
-              1800 257 8600.
+              98953 31916.
             </p>
           </section>
         </div>

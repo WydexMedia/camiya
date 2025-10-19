@@ -126,7 +126,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Call Us</h3>
               <a href="tel:18002578600" className="text-2xl font-bold text-teal-600 hover:text-teal-700 transition-colors duration-300 block mb-6">
-                1800 257 8600
+                98953 31916
               </a>
               <div className="flex items-center text-teal-600 font-semibold">
                 <Star className="h-4 w-4 mr-1" />
@@ -379,7 +379,7 @@ export default function ContactPage() {
                 href="tel:18002578600" 
                 className="bg-white text-teal-600 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-teal-50 transition-colors duration-300 shadow-lg hover:shadow-xl"
               >
-                Call Now: 1800 257 8600
+                Call Now: 98953 31916
               </a>
               <a 
                 href="mailto:camiya@gmail.com" 

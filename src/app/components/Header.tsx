@@ -37,7 +37,7 @@ const Header = () => {
               <div className="flex items-center space-x-6">
                 <div className="flex items-center space-x-2 hover:text-white transition-colors">
                   <Phone size={12} />
-                  <span>1800 257 8600</span>
+                  <span>98953 31916</span>
                 </div>
                 <div className="flex items-center space-x-2 hover:text-white transition-colors">
                   <Mail size={12} />
@@ -174,7 +174,7 @@ const Header = () => {
                   </div>
                   <div>
                     <p className="text-xs text-gray-500 font-medium">Call us</p>
-                    <p className="font-semibold">1800 257 8600</p>
+                    <p className="font-semibold">98953 31916</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3 text-sm text-gray-700 hover:text-teal-700 transition-colors">

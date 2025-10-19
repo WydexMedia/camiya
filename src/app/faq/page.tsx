@@ -119,7 +119,7 @@ const FAQPage = () => {
               className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-teal-600 to-emerald-600 text-white rounded-xl hover:from-teal-700 hover:to-emerald-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
             >
               <span className="mr-2">📞</span>
-              Call Us: 1800 257 8600
+              Call Us: 98953 31916
             </a>
             <a
               href="mailto:camiya@gmail.com"

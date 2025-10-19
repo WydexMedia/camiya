@@ -69,7 +69,7 @@ const Footer = () => {
               <div>
                 <p className="font-semibold text-white mb-2">INDIA CONTACT INFO</p>
                 <p className="mb-1"><i className="fas fa-map-marker-alt mr-2"></i> Calicut, Kerala, India</p>
-                <p className="mb-1"><i className="fas fa-phone-alt mr-2"></i> 1800 257 8600</p>
+                <p className="mb-1"><i className="fas fa-phone-alt mr-2"></i> 98953 31916</p>
                 <p><i className="fas fa-envelope mr-2"></i> info@camiyadiamonds.com</p>
               </div>
             </div>
