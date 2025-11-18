@@ -53,7 +53,7 @@ const Header = () => {
         </div>
 
         {/* Main navigation */}
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-6 py-2 lg:py-4">
           <div className="flex justify-between items-center gap-6">
             {/* Logo - Hidden on mobile, shown on desktop */}
             <Link href="/" className="hidden lg:flex items-center group lg:flex-none">
@@ -130,11 +130,11 @@ const Header = () => {
               <Link href="/" className="flex items-center group">
                 <div className="relative">
                   <Image 
-                    className="w-28 h-28 transition-transform duration-300 group-hover:scale-110" 
+                    className="w-16 h-16 transition-transform duration-300 group-hover:scale-110" 
                     src="/images/logo/camiya_white.png" 
                     alt="Camiya Diamonds" 
-                    width={112} 
-                    height={112} 
+                    width={64} 
+                    height={64} 
                   />
                   <div className="absolute inset-0 bg-teal-300/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
