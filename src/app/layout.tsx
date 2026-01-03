@@ -1,19 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Allura, Dancing_Script } from "next/font/google";
+import {  Allura, Dancing_Script } from "next/font/google";
+import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
 import { WishlistProvider } from "./components/WishlistContext";
 import { Toaster } from "@/components/ui/sonner";
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+// const geistSans = Geist({
+//   variable: "--font-geist-sans",
+//   subsets: ["latin"],
+// });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
+
+const geistSans = GeistSans;
+const geistMono = GeistMono;
+
 
 const allura = Allura({
   weight: "400",
