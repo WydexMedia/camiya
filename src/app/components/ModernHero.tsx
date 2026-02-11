@@ -89,7 +89,7 @@ const ModernHero = () => {
               {/* Autoplay Video */}
               <div className="relative w-full rounded-2xl overflow-hidden shadow-xl">
                 <video
-                  src="/video/camiya_webreel.MP4"
+                  src="/images/hero/camiya_webreel.MP4"
                   autoPlay
                   muted
                   loop
