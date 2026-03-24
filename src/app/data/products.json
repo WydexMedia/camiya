@@ -5056,5 +5056,1215 @@
       "rose"
     ],
     "diamondWeight": "0.04 CT"
+  },
+  {
+    "id": "CD22107",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD22107.png",
+    "price": 57300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD22840",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD22840.png",
+    "price": 62200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26688",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26688.png",
+    "price": 69000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26693",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26693.png",
+    "price": 66000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26694",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26694.png",
+    "price": 70200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26700",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26700.png",
+    "price": 57100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26701",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26701.png",
+    "price": 64900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26702",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26702.png",
+    "price": 51100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26703",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26703.png",
+    "price": 48200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26704",
+    "category": "Bangles",
+    "name": "Diamond Bangle",
+    "image": "/images/bangles/CD26704.png",
+    "price": 64600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23918",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD23918.png",
+    "price": 27800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24460",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD24460.png",
+    "price": 30300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24634",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD24634.png",
+    "price": 23400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24885",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD24885.png",
+    "price": 27900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24910",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD24910.png",
+    "price": 23700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25543",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD25543.png",
+    "price": 26600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25564",
+    "category": "Earrings",
+    "name": "Diamond Earrings",
+    "image": "/images/studs/CD25564.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD22955",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD22955.png",
+    "price": 71800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23110",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD23110.png",
+    "price": 41200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23149",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD23149.png",
+    "price": 60200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26092",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD26092.png",
+    "price": 51200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26360",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD26360.png",
+    "price": 19000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26538",
+    "category": "Pendants",
+    "name": "Diamond Pendant",
+    "image": "/images/pendants/CD26538.png",
+    "price": 48200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD20166",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD20166.png",
+    "price": 24200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD20167",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD20167.png",
+    "price": 26400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD20190",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD20190.png",
+    "price": 24600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD20217",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD20217.png",
+    "price": 24600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD21736",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD21736.png",
+    "price": 19800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD21738",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD21738.png",
+    "price": 23100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD21806",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD21806.png",
+    "price": 68500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD22072",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD22072.png",
+    "price": 20100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD22805",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD22805.png",
+    "price": 30600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD22806",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD22806.png",
+    "price": 22100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23378",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23378.png",
+    "price": 22500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23404",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23404.png",
+    "price": 26600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23413",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23413.png",
+    "price": 27300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23445",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23445.png",
+    "price": 21600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23588",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23588.png",
+    "price": 19800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23593",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23593.png",
+    "price": 22400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23594",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23594.png",
+    "price": 22800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23596",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23596.png",
+    "price": 25900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23598",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23598.png",
+    "price": 26800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23689",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23689.png",
+    "price": 0,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23698",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23698.png",
+    "price": 24400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23712",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23712.png",
+    "price": 26400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23719",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23719.png",
+    "price": 32100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23733",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23733.png",
+    "price": 0,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23735",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23735.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23736",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23736.png",
+    "price": 23600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23777",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23777.png",
+    "price": 25900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23778",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23778.png",
+    "price": 19800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23810",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23810.png",
+    "price": 32000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23827",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23827.png",
+    "price": 25700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD23828",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD23828.png",
+    "price": 25400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24366",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24366.png",
+    "price": 23000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24417",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24417.png",
+    "price": 26600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24481",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24481.png",
+    "price": 24200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24487",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24487.png",
+    "price": 25500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24490",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24490.png",
+    "price": 24500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24493",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24493.png",
+    "price": 27700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24494",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24494.png",
+    "price": 23100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24511",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24511.png",
+    "price": 24600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24512",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24512.png",
+    "price": 26300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24534",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24534.png",
+    "price": 22500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24537",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24537.png",
+    "price": 22700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24857",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24857.png",
+    "price": 22200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD24971",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD24971.png",
+    "price": 25000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25086",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25086.png",
+    "price": 28400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25088",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25088.png",
+    "price": 0,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25089",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25089.png",
+    "price": 27000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25095",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25095.png",
+    "price": 23900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25096",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25096.png",
+    "price": 20900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25098",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25098.png",
+    "price": 22500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25100",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25100.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25110",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25110.png",
+    "price": 23900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25114",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25114.png",
+    "price": 19700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25117",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25117.png",
+    "price": 25000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25118",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25118.png",
+    "price": 26000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25125",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25125.png",
+    "price": 21200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25621",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25621.png",
+    "price": 26700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25634",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25634.png",
+    "price": 20800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25691",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25691.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25695",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25695.png",
+    "price": 26100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25697",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25697.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25699",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25699.png",
+    "price": 23600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25700",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25700.png",
+    "price": 22400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25701",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25701.png",
+    "price": 28600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25702",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25702.png",
+    "price": 22500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25715",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25715.png",
+    "price": 0,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25717",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25717.png",
+    "price": 29300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25724",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25724.png",
+    "price": 26100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25736",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25736.png",
+    "price": 30800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25741",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25741.png",
+    "price": 24900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25743",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25743.png",
+    "price": 30800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25749",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25749.png",
+    "price": 32900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25753",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25753.png",
+    "price": 27100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25766",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25766.png",
+    "price": 22100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25773",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25773.png",
+    "price": 25100,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD25779",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD25779.png",
+    "price": 24200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26014",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26014.png",
+    "price": 24000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26023",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26023.png",
+    "price": 25800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26041",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26041.png",
+    "price": 25800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26052",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26052.png",
+    "price": 25800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26062",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26062.png",
+    "price": 28700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26066",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26066.png",
+    "price": 29000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26068",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26068.png",
+    "price": 29900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26069",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26069.png",
+    "price": 24900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26140",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26140.png",
+    "price": 22200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26144",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26144.png",
+    "price": 23900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26151",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26151.png",
+    "price": 22800,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26737",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26737.png",
+    "price": 29300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26741",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26741.png",
+    "price": 29400,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26742",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26742.png",
+    "price": 26600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26744",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26744.png",
+    "price": 26700,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26745",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26745.png",
+    "price": 22500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26747",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26747.png",
+    "price": 28000,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26748",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26748.png",
+    "price": 25200,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26749",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26749.png",
+    "price": 24300,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26753",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26753.png",
+    "price": 31500,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26754",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26754.png",
+    "price": 23900,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
+  },
+  {
+    "id": "CD26761",
+    "category": "Rings",
+    "name": "Diamond Ring",
+    "image": "/images/ring/CD26761.png",
+    "price": 26600,
+    "weight": "N/A",
+    "purity": "18K Gold",
+    "stones": "Diamond"
   }
 ]
