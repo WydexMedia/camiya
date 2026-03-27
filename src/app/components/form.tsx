@@ -52,7 +52,7 @@ const BuyNowPopup: React.FC<Props> = ({ product, onClose }) => {
         Place: ${formData.place}`;
 
         const encodedMessage = encodeURIComponent(message);
-        const whatsappNumber = "919074916065";
+        const whatsappNumber = "919895331916";
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
         window.open(whatsappURL, "_blank");
